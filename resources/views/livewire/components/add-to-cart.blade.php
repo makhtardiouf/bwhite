@@ -20,10 +20,10 @@
 
         <button
             type="submit"
-            class="w-full px-6 py-4 text-sm font-medium text-center text-white bg-indigo-600 rounded-lg hover:bg-indigo-700"
+            class="w-full px-2 py-2 text-sm font-medium text-center text-white bg-indigo-600 rounded-lg hover:bg-indigo-700"
             wire:click.prevent="addToCart"
         >
-            Add to Cart
+            Sauvegarder
         </button>
     </div>
 

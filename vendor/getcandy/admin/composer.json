@@ -1,0 +1,45 @@
+{
+    "name": "getcandy/admin",
+    "description": "Admin Hub for GetCandy. A modern headless e-commerce solution for Laravel PHP framework.",
+    "keywords": ["getcandy", "laravel", "ecommerce", "e-commerce", "headless", "store", "shop", "cart"],
+    "type": "library",
+    "license": "MIT",
+    "minimum-stability": "beta",
+    "authors": [
+        {
+          "name": "GetCandy",
+          "homepage": "https://getcandy.io/"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "GetCandy\\Hub\\": "src",
+            "GetCandy\\Hub\\Database\\Factories\\": "database/factories"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "GetCandy\\Hub\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "GetCandy\\Hub\\AdminHubServiceProvider"
+            ]
+        }
+    },
+    "require": {
+        "php": "^8.0",
+        "getcandy/core": "self.version",
+        "livewire/livewire": "^2.0",
+        "getcandy/licensing": "dev-main"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.0|^7.0",
+        "phpunit/phpunit": "^9.5"
+    }
+}

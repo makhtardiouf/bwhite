@@ -1,5 +1,5 @@
 @props(['product'])
-
+xx
 <a
     class="block group"
     href="{{ route('product.view', $product->defaultUrl->slug) }}"
@@ -20,7 +20,7 @@
 
     <p class="mt-1 text-sm text-gray-600">
         <span class="sr-only">
-            Price
+            Prix
         </span>
 
         <x-product-price :product="$product" />

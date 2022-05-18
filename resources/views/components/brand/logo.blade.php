@@ -1,1 +1,1 @@
-<i class="fa-2x fa-solid fa-ball-pile"></i>
+<img src="{{ asset('img/bwhite3.png') }}"/>
