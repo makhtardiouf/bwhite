@@ -1,10 +1,7 @@
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg position-absolute top-0 z-index-3 my-3 {{ (Request::is('static-sign-up') ? 'w-100 shadow-none  navbar-transparent mt-4' : 'blur blur-rounded shadow py-2 start-0 end-0 mx4') }}">
+<nav class="navbar navbar-expand-lg top-0 z-index-3 my-3 {{ (Request::is('static-sign-up') ? 'w-100 shadow-none navbar-transparent mt-4' : 'w-100 shadow-none mt-4') }}">
   <div class="container-fluid {{ (Request::is('static-sign-up') ? 'container' : 'container-fluid') }}">
-    <a class="navbar-brand font-weight-bolder ms-lg-0 ms-3 {{ (Request::is('static-sign-up') ? 'text-white' : '') }}" href="{{ url('dashboard') }}">
-     <span class="btn btn-sm btn-round bg-gradient-light text-info text-gradient ">Bwhite Sénégal</span><br>
-     <span>La plateforme de Proximité</span>
-    </a>
+   
     <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon mt-2">
         <span class="navbar-toggler-bar bar1"></span>
@@ -12,7 +9,7 @@
         <span class="navbar-toggler-bar bar3"></span>
       </span>
     </button>
-    <div class="collapse navbar-collapse" id="navigation">
+    <div class="collapse navbar-collapse right" id="navigation">
       <ul class="navbar-nav mx-auto">
         @if (auth()->user())
             <li class="nav-item">
@@ -30,14 +27,14 @@
         @endif
         <li class="nav-item">
           <a class="nav-link me-2" href="{{ auth()->user() ? url('static-sign-up') : url('register') }}">
-            <i class="fas fa-user-circle opacity-6 me-1 {{ (Request::is('static-sign-up') ? '' : 'text-dark') }}"></i>
-            Sign Up
+            <i class="fas fa-user-circle  me-1 text-dark"></i>
+            Enregistrement
           </a>
         </li>
         <li class="nav-item">
           <a class="nav-link me-2" href="{{ auth()->user() ? url('static-sign-in') : url('login') }}">
-            <i class="fas fa-key opacity-6 me-1 {{ (Request::is('static-sign-up') ? '' : 'text-dark') }}"></i>
-            Sign In
+            <i class="fas fa-key me-1 text-blue"></i>
+            Connection
           </a>
         </li>
       </ul>

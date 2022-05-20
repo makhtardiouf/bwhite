@@ -21,13 +21,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', function () {
+	return view('home');
+})->name('home');
 
 Route::group(['middleware' => 'auth'], function () {
 
-    Route::get('/', [HomeController::class, 'home']);
 	Route::get('dashboard', function () {
 		return view('dashboard');
 	})->name('dashboard');
+	
 
 	Route::get('billing', function () {
 		return view('billing');
@@ -36,10 +39,6 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('profile', function () {
 		return view('profile');
 	})->name('profile');
-
-	Route::get('rtl', function () {
-		return view('rtl');
-	})->name('rtl');
 
 	Route::get('user-management', function () {
 		return view('laravel-examples/user-management');
