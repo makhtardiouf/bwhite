@@ -28,19 +28,17 @@
         <li class="nav-item">
           <a class="nav-link me-2" href="{{ auth()->user() ? url('static-sign-up') : url('register') }}">
             <i class="fas fa-user-circle  me-1 text-dark"></i>
-            Enregistrement
           </a>
         </li>
         <li class="nav-item">
           <a class="nav-link me-2" href="{{ auth()->user() ? url('static-sign-in') : url('login') }}">
             <i class="fas fa-key me-1 text-blue"></i>
-            Connection
           </a>
         </li>
-      </ul>
-      <ul class="navbar-nav d-lg-block d-none">
         <li class="nav-item">
-          <a href="#" target="_blank" class="btn btn-sm btn-round mb-0 me-1 bg-gradient-{{ (Request::is('static-sign-up') ? 'light' : 'dark') }}">Telecharger</a>
+          <a class="nav-link me-2" href="#" target="_blank">
+            <i class="fa-solid fa-mobile-screen  text-blue"></i>
+          </a>
         </li>
       </ul>
     </div>

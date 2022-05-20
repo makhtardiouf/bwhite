@@ -5,13 +5,13 @@
         @include('layouts.navbars.guest.nav')
         @yield('content') 
     @else
-        <div class="container position-sticky z-index-sticky top-0">
+        <div class="container z-index-sticky top-0">
             <div class="row">
             <div class="col-2">
                 <a href="/"><img src="{{ asset('assets/img/bwhite3.png') }}" /></a>
                 </div>
                 <div class="col-6 py-4">
-                    <span class="display-6 font-weight-bolder text-info text-gradient">La Plateforme de Proximité</span>
+                    <span class="display-6 font-weight-bolder text-info text-gradient">Votre Plateforme de Proximité</span>
                 </div>
 
                 <div class="col-4">
