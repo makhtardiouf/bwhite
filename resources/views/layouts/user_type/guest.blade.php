@@ -5,13 +5,13 @@
         @include('layouts.navbars.guest.nav')
         @yield('content') 
     @else
-        <div class="container z-index-sticky top-0">
+        <div class="container-fluid top-0">
             <div class="row">
             <div class="col-2">
-                <a href="/"><img src="{{ asset('assets/img/bwhite3.png') }}" /></a>
+                <a href="/"><img src="{{ asset('assets/img/bwhite4.png') }}" style="max-height:156px;" class="p-4"/></a>
                 </div>
-                <div class="col-6 py-4">
-                    <span class="display-6 font-weight-bolder text-info text-gradient">Votre Plateforme de Proximité</span>
+                <div class="col-6 pl-2 py-4">
+                    <span class="display-6 font-weight-bolder text-dark text-gradient">Votre Plateforme de Proximité</span>
                 </div>
 
                 <div class="col-4">
@@ -20,6 +20,6 @@
             </div>
         </div>
         @yield('content')        
-        @include('layouts.footers.guest.footer')
+        @include('layouts.footers.footer')
     @endif
 @endsection
