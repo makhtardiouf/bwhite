@@ -3,11 +3,12 @@
 @section('content')
 
   <section class="min-vh-100 mb-8">
-    <div class="page-header align-items-start min-vh-50 pt-5 pb-11 mx-3 border-radius-lg" style="background-image: url('../assets/img/curved-images/curved14.jpg');">
+<!--     <div class="page-header align-items-start min-vh-50 pt-5 pb-11 mx-3 border-radius-lg" style="background-image: url('../assets/img/curved-images/curved14.jpg');">
       <span class="mask opacity-6"></span>
       
-    </div>
-    <div class="container">
+    </div> -->
+    <div class="min-vh-50"></div>
+    <div class="container pt-20">
       <div class="row mt-lg-n10 mt-md-n11 mt-n10">
         <div class="col-xl-4 col-lg-5 col-md-7 mx-auto">
           <div class="card z-index-0">

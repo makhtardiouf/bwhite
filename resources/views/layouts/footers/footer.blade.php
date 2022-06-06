@@ -2,15 +2,16 @@
   <footer class="footer py-5">
     <div class="container">
       <div class="row">
-      <div class="col-lg-8 mb-4 mx-auto text-center">
+        <div class="col-2"><img src="{{ asset('assets/img/bwhite5-logo.jpeg') }}" /></div>
+
+        <div class="col-lg-8 mb-4 mx-auto text-center">
           <a href="#" target="_blank" class="text-secondary me-xl-5 me-3 mb-sm-0 mb-2">
               Bwhite
           </a>
           <a href="#" target="_blank" class="text-secondary me-xl-5 me-3 mb-sm-0 mb-2">
               Apropos
           </a>
-          
-      </div>
+        </div>
         @if (!auth()->user() || \Request::is('static-sign-up')) 
           <div class="col-lg-8 mx-auto text-center mb-4 mt-2">
               <a href="#" target="_blank" class="text-secondary me-xl-4 me-4">
