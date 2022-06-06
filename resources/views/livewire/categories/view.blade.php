@@ -6,20 +6,17 @@
 				<div class="card-header">
 					<div style="display: flex; justify-content: space-between; align-items: center;">
 						<div class="float-left">
-							<h4><i class="fab fa-laravel text-info"></i>
-							Category Listing </h4>
-						</div>
-						<div wire:poll.60s>
-							<code><h5>{{ now()->format('H:i:s') }} UTC</h5></code>
+							<h4><i class="icon icon-shape icon-sm"></i>
+							Categories </h4>
 						</div>
 						@if (session()->has('message'))
 						<div wire:poll.4s class="btn btn-sm btn-success" style="margin-top:0px; margin-bottom:0px;"> {{ session('message') }} </div>
 						@endif
 						<div>
-							<input wire:model='keyWord' type="text" class="form-control" name="search" id="search" placeholder="Search Categorys">
+							<input wire:model='keyWord' type="text" class="form-control" name="search" id="search" placeholder="Recherche">
 						</div>
-						<div class="btn btn-sm btn-info" data-toggle="modal" data-target="#createDataModal">
-						<i class="fa fa-plus"></i>  Add Categorys
+						<div class="btn bg-gradient-dark btn-sm" data-toggle="modal" data-target="#createDataModal">
+						<i class="fa fa-plus"></i> Ajouter
 						</div>
 					</div>
 				</div>
@@ -32,11 +29,11 @@
 						<thead class="thead">
 							<tr> 
 								<td>#</td> 
-								<th>Name</th>
-								<th>Weight</th>
+								<th>Nom</th>
+								<th>Priorité</th>
 								<th>Icon</th>
-								<th>Parent Id</th>
-								<td>ACTIONS</td>
+								<th>Parent</th>
+								<td></td>
 							</tr>
 						</thead>
 						<tbody>

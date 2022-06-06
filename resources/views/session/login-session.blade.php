@@ -10,7 +10,7 @@
             <div class="col-xl-4 col-lg-5 col-md-6 d-flex flex-column mx-auto">
               <div class="card card-plain mt-8">
                 <div class="card-header pb-0 text-left bg-transparent">
-                  <h3 class="font-weight-bolder text-info text-gradient">Bienvenue</h3>
+                  <h3 class="font-weight-bolder">Bienvenue</h3>
                 </div>
                 <div class="card-body">
                   <form role="form" method="POST" action="/session">
@@ -34,7 +34,7 @@
                       <label class="form-check-label" for="rememberMe">Se rappeler</label>
                     </div>
                     <div class="text-center">
-                      <button type="submit" class="btn bg-gradient-info w-100 mt-4 mb-0">Sign in</button>
+                      <button type="submit" class="btn bg-gradient-dark w-100 mt-4 mb-0">Sign in</button>
                     </div>
                   </form>
                 </div>

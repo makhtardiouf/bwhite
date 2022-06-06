@@ -8,13 +8,13 @@
         <div class="container-fluid top-0">
             <div class="row">
             <div class="col-2">
-                <a href="/"><img src="{{ asset('assets/img/bwhite4.png') }}" style="max-height:156px;" class="p-4"/></a>
+                <a href="/"><img src="{{ asset('assets/img/bwhite5-logo.jpeg') }}" style="max-height:156px;" class="p-4"/></a>
                 </div>
-                <div class="col-6 pl-2 py-4">
-                    <span class="display-6 font-weight-bolder text-dark text-gradient">Votre Plateforme de Proximité</span>
+                <div class="col-8 page-header min-vh-30 pt-2 border-radius-lg" style="background-image: url('{{ asset('assets/img/bwhite-banniere1.jpeg') }}');">
+                <span class="mask opacity-6"></span>
                 </div>
 
-                <div class="col-4">
+                <div class="col-2">
                     @include('layouts.navbars.guest.nav')
                 </div>
             </div>
