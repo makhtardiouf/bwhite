@@ -99,11 +99,11 @@
           <div class="row">
             <div class="col-lg-6">
               <div class="d-flex flex-column h-100">
-                <p class="mb-1 pt-2 text-bold">Built by developers</p>
-                <h5 class="font-weight-bolder">Soft UI Dashboard</h5>
-                <p class="mb-5">From colors, cards, typography to complex elements, you will find the full documentation.</p>
+                <p class="mb-1 pt-2 text-bold"></p>
+                <h5 class="font-weight-bolder">Bwhite</h5>
+                <p class="mb-5">La plateforme des annonceurs</p>
                 <a class="text-body text-sm font-weight-bold mb-0 icon-move-right mt-auto" href="javascript:;">
-                  Read More
+                  Voir
                   <i class="fas fa-arrow-right text-sm ms-1" aria-hidden="true"></i>
                 </a>
               </div>
@@ -125,10 +125,10 @@
         <div class="overflow-hidden position-relative border-radius-lg bg-cover h-100" style="background-image: url('../assets/img/ivancik.jpg');">
           <span class="mask bg-gradient-dark"></span>
           <div class="card-body position-relative z-index-1 d-flex flex-column h-100 p-3">
-            <h5 class="text-white font-weight-bolder mb-4 pt-2">Work with the rockets</h5>
-            <p class="text-white">Wealth creation is an evolutionarily recent positive-sum game. It is all about who take the opportunity first.</p>
+            <h5 class="text-white font-weight-bolder mb-4 pt-2">Nos Packs</h5>
+            <p class="text-white">....</p>
             <a class="text-white text-sm font-weight-bold mb-0 icon-move-right mt-auto" href="javascript:;">
-              Read More
+              Voir
               <i class="fas fa-arrow-right text-sm ms-1" aria-hidden="true"></i>
             </a>
           </div>
@@ -145,7 +145,7 @@
               <canvas id="chart-bars" class="chart-canvas" height="170"></canvas>
             </div>
           </div>
-          <h6 class="ms-2 mt-4 mb-0"> Active Users </h6>
+          <h6 class="ms-2 mt-4 mb-0"> Utilisateurs actifs </h6>
           <p class="text-sm ms-2"> (<span class="font-weight-bolder">+23%</span>) than last week </p>
           <div class="container border-radius-lg">
             <div class="row">
@@ -256,10 +256,10 @@
     <div class="col-lg-7">
       <div class="card z-index-2">
         <div class="card-header pb-0">
-          <h6>Sales overview</h6>
+          <h6>Ventes</h6>
           <p class="text-sm">
             <i class="fa fa-arrow-up text-success"></i>
-            <span class="font-weight-bold">4% more</span> in 2021
+            <span class="font-weight-bold">4% more</span> in 2022
           </p>
         </div>
         <div class="card-body p-3">
