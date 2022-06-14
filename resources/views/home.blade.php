@@ -6,7 +6,7 @@
     <div class="col-12 mt-4">
         <div class="card mb-4">
         <div class="card-header pb-0 p-3">
-            <h6 class="mb-1">Nouveautés</h6>
+            <h6 class="mb-1 text-info text-gradient font-weight-bold">Nouveautés</h6>
             <p class="text-sm">Immobilier</p>
         </div>
         <div class="card-body p-3">
@@ -106,7 +106,7 @@
                 <div class="card-body d-flex flex-column justify-content-center text-center">
                     <a href="javascript:;">
                     <i class="fa fa-plus text-secondary mb-3"></i>
-                    <h5 class=" text-secondary"> Ajoutez une annonce </h5>
+                    <h5 class="text-success text-gradient font-weight-bold"> Ajoutez une annonce </h5>
                     </a>
                 </div>
                 </div>
@@ -218,7 +218,7 @@
                 <div class="card-body d-flex flex-column justify-content-center text-center">
                     <a href="javascript:;">
                     <i class="fa fa-plus text-secondary mb-3"></i>
-                    <h5 class=" text-secondary"> Ajoutez une annonce </h5>
+                    <h5 class=" text-success text-gradient font-weight-bold"> Ajoutez une annonce </h5>
                     </a>
                 </div>
                 </div>

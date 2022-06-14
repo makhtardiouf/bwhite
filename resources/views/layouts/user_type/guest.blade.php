@@ -7,15 +7,15 @@
     @else
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-2 col-sm-6">
+                <!-- <div class="col-md-2 col-sm-6">
                     <span class="p-4"><a href="/"><img src="{{ asset('assets/img/bwhite5-logo.jpeg') }}" style="max-height:156px;" /></a></span>
-                </div>
+                </div> -->
 
-                <div class="col-md-8">
+                <div class="col-7">
                     <a href="/"><span class=""><img src="{{ asset('assets/img/bwhite-banniere1.jpeg') }}" class=" img-fluid border-radius-lg" /></span></a>
                 </div>
 
-                <div class="col-md-2 col-sm-4">
+                <div class="col align-self-center">
                     @include('layouts.navbars.guest.nav')
                 </div>
             </div>

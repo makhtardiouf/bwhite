@@ -307,10 +307,10 @@
     <div class="col-lg-4 col-md-6">
       <div class="card h-100">
         <div class="card-header pb-0">
-          <h6>Orders overview</h6>
+          <h6>Les commandes</h6>
           <p class="text-sm">
             <i class="fa fa-arrow-up text-success" aria-hidden="true"></i>
-            <span class="font-weight-bold">24%</span> this month
+            <span class="font-weight-bold">4%</span> ce mois
           </p>
         </div>
         <div class="card-body p-3">
@@ -320,8 +320,8 @@
                 <i class="ni ni-bell-55 text-success text-gradient"></i>
               </span>
               <div class="timeline-content">
-                <h6 class="text-dark text-sm font-weight-bold mb-0">XOF2400, Design changes</h6>
-                <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">22 DEC 7:20 PM</p>
+                <h6 class="text-dark text-sm font-weight-bold mb-0">250,000F, Design</h6>
+                <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">10 Juin</p>
               </div>
             </div>
             <div class="timeline-block mb-3">
@@ -329,8 +329,8 @@
                 <i class="ni ni-html5 text-danger text-gradient"></i>
               </span>
               <div class="timeline-content">
-                <h6 class="text-dark text-sm font-weight-bold mb-0">New order #1832412</h6>
-                <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">21 DEC 11 PM</p>
+                <h6 class="text-dark text-sm font-weight-bold mb-0">Déploiement</h6>
+                <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">13 Juin</p>
               </div>
             </div>
           </div>

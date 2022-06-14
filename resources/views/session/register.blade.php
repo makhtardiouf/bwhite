@@ -11,7 +11,7 @@
         <div class="col-xl-4 col-lg-5 col-md-7 mx-auto">
           <div class="card z-index-0">
             <div class="card-header text-center pt-4">
-              <h5>Ouvrir un compte</h5>
+              <h5 class="text-info text-gradient font-weight-bold">Ouvrir un compte</h5>
             </div>
             <div class="row px-xl-5 px-sm-4 px-3">
               <div class="col-3 ms-auto px-1">
@@ -76,7 +76,7 @@
                 <div class="form-check form-check-info text-left">
                   <input class="form-check-input" type="checkbox" name="agreement" id="flexCheckDefault" checked>
                   <label class="form-check-label" for="flexCheckDefault">
-                    J'accepte les <a href="javascript:;" class="text-dark font-weight-bolder">Termess et Conditions</a>
+                    J'accepte les <a href="javascript:;" class="text-dark font-weight-bolder">Termes et Conditions</a>
                   </label>
                   @error('agreement')
                     <p class="text-danger text-xs mt-2">Veuillez accepter les termes et conditions</p>
@@ -85,7 +85,7 @@
                 <div class="text-center">
                   <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2">Soumettre</button>
                 </div>
-                <p class="text-sm mt-3 mb-0">Vous avez déjà un compte? <a href="login" class="text-dark font-weight-bolder">Connectez vous</a></p>
+                <p class="text-sm mt-3 mb-0">Vous avez déjà un compte? <a href="login" class="text-info text-gradient font-weight-bold">Connectez vous</a></p>
               </form>
             </div>
           </div>
