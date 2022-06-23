@@ -8,9 +8,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-2">
-            <a href="/"><img src="{{ asset('assets/img/bwhite5-logo.jpeg') }}" class="img-fluid border-radius-lg" style="max-height:156px;" /></a></span>
-            <!-- bwhite6-logo-black.svg <a href="/"><span class=""><img src="{{ asset('assets/img/bwhite-banniere1.jpeg') }}" class=" img-fluid border-radius-lg" /></span></a> -->
-
+            <a href="/"><img src="{{ asset('assets/img/bwhite5-logo.jpeg') }}" class="img-fluid border-radius-lg" style="max-height:156px;" /></a>
         </div>
         <div class="col-5 h3 mt-4 text-info text-gradient">La Plateforme de Proximité</div>
         <div class="col-3 mt-4">

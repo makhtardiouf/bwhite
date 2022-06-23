@@ -116,6 +116,10 @@
         </div>
     </div>
 
+    <div class="col m-2">
+        <a href="#"><img src="{{ asset('assets/img/bwhite-banniere1.jpeg') }}" class="mx-auto img-fluid border-radius-lg" /></a>
+    </div>
+
     <div class="col-12 mt-4">
         <div class="card mb-4">
         <div class="card-header pb-0 p-3">
