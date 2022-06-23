@@ -11,7 +11,11 @@
           <a href="#"  class="text-secondary me-xl-5 me-3 mb-sm-0 mb-2">
               Apropos
           </a>
+          <br>
+          <i class="fa-solid fa-phone text-black"></i>
+          <span class="fs-5 text-center text-info text-gradient"> <a href="tel:+221338362883">33-836-28-83</a> / <a href="tel:+221780103636">78-010-3636</a></span>
         </div>
+
         @if (!auth()->user() || \Request::is('static-sign-up')) 
           <div class="col-lg-8 mx-auto text-center mb-4 mt-2">
               <a href="#"  class="text-secondary me-xl-4 me-4">
