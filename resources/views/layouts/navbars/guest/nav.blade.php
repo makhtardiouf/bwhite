@@ -27,12 +27,12 @@
         @endif
         <li class="nav-item">
           <a class="nav-link me-2" href="{{ auth()->user() ? url('static-sign-up') : url('register') }}">
-            <i class="fas fa-2x fa-user-circle  me-1 text-white"></i>
+            <i class="fas fa-2x fa-user-circle  me-1 text-black"></i>
           </a>
         </li>
         <li class="nav-item">
           <a class="nav-link me-2" href="{{ auth()->user() ? url('static-sign-in') : url('login') }}">
-            <i class="fas fa-2x fa-key me-1 text-white"></i>
+            <i class="fas fa-2x fa-key me-1 text-black"></i>
           </a>
         </li>
         <li class="nav-item">
