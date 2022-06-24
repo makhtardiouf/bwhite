@@ -8,6 +8,7 @@
 <div class="row">
     <div class="form-group col-sm-6">
         {!! Form::label('category', 'Catégorie:') !!}
+        
         {!! Form::select('category', array(
         'Immobilier' => array('Immobilier' => 'Immobilier'),
         'Automobile' => array('Automobile' => 'Automobile'),
