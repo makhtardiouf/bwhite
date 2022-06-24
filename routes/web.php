@@ -69,7 +69,7 @@ Route::group(['middleware' => 'auth'], function () {
 
 
 	Route::resource('categories', App\Http\Controllers\CategoryController::class);
-
+	Route::resource('listings', App\Http\Controllers\ListingController::class);
 });
 
 
@@ -98,5 +98,4 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
-
 

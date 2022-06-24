@@ -1,19 +1,19 @@
 @extends('layouts.user_type.auth')
 @section('title')
-    Catégories 
+    Les annonces 
 @endsection
 @section('content')
     <section class="section">
         <div class="section-header">
-            <h3>Catégories</h3>
+            <h4>Les annonces</h4>
             <div class="section-header-breadcrumb">
-                <a href="{{ route('categories.create')}}" class="btn btn-sm bg-gradient-dark ">Ajouter</a>
+            <a href="{{ route('listings.create')}}" class="btn btn-sm bg-gradient-dark">Ajouter</a>
             </div>
         </div>
     <div class="section-body">
        <div class="card">
             <div class="card-body">
-                @include('categories.table')
+                @include('listings.table')
             </div>
        </div>
    </div>

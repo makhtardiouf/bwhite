@@ -1,0 +1,86 @@
+[
+    {
+        "name": "id",
+        "dbType": "increments",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": true,
+        "inForm": false,
+        "inIndex": false,
+        "inView": false
+    },
+    {
+        "name": "title",
+        "dbType": "string",
+        "htmlType": "text",
+        "validations": "required",
+        "searchable": true
+    },
+    {
+        "name": "description",
+        "dbType": "string",
+        "htmlType": "textarea",
+        "inIndex": false,
+        "searchable": true
+    },
+    {
+        "name": "category",
+        "dbType": "string",
+        "htmlType": "select:Immobilier,Electronique,Automobile, Divers",
+        "searchable": true
+    },
+    {
+        "name": "price",
+        "dbType": "double",
+        "htmlType": "number",
+        "inIndex": false,
+        "searchable": false
+    },
+    {
+        "name": "image",
+        "dbType": "string",
+        "htmlType": "file",
+        "searchable": false
+    },
+    {
+        "name": "area",
+        "dbType": "string",
+        "htmlType": "select:Dakar, Diourbel, Fatick, Kaolack, Kolda, Matam, Mbour, Pikine, Rufisque, Saint-Louis, Saly, Tambacounda, Thiès, Tivaouane, Touba, Ziguinchor",
+        "inIndex": false,
+        "searchable": true
+    },
+    {
+        "name": "category_id",
+        "dbType": "integer:unsigned:foreign,category,id",
+        "htmlType": "text",
+        "relation": "mt1,Category,category_id,id",
+        "inForm": false,
+        "inIndex": false,
+        "inView": false,
+        "searchable": false
+    },
+    {
+        "name": "created_at",
+        "dbType": "timestamp",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": false,
+        "inForm": false,
+        "inIndex": false
+    },
+    {
+        "name": "updated_at",
+        "dbType": "timestamp",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": false,
+        "inForm": false,
+        "inIndex": false
+    }
+]

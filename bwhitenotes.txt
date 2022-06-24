@@ -1,0 +1,12 @@
+php artisan infyom:scaffold Category --tableName="category" --fieldsFile=database/category.json
+
+php artisan infyom:scaffold Listing --tableName="listing" --fieldsFile=database/annonce.json
+
+Dakar, Diourbel, Fatick, Kaolack, Kolda, Matam, Mbour, Pikine, Rufisque, Saint-Louis, Saly, Tambacounda, Thiès, Tivaouane, Touba, Ziguinchor
+
+array(
+    'Immobilier' => array('Immobilier' => 'Immobilier'),
+    'Automobile' => array('Automobile' => 'Automobile'),
+    'Electronique' => array('Electronique' => 'Electronique'),
+    'Sport' => array('Sport' => 'Sport')
+));

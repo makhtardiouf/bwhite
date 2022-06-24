@@ -1,13 +1,13 @@
 @extends('layouts.user_type.auth')
 @section('title')
-    Catégorie
+    Contenu de l'annonce 
 @endsection
 @section('content')
     <section class="section">
         <div class="section-header">
-        <h3>Catégorie</h3>
+        <h4>Contenu de l'annonce</h4>
         <div class="section-header-breadcrumb">
-            <a href="{{ route('categories.index') }}"
+            <a href="{{ route('listings.index') }}"
                  class="btn btn-sm bg-gradient-dark float-right">Retour</a>
         </div>
       </div>
@@ -15,7 +15,7 @@
     <div class="section-body">
            <div class="card">
             <div class="card-body">
-                    @include('categories.show_fields')
+                    @include('listings.show_fields')
             </div>
             </div>
     </div>

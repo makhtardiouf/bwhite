@@ -23,7 +23,7 @@
 </div>
 
 <!-- Submit Field -->
-<div class="form-group col-sm-12">
-    {!! Form::submit('Save', ['class' => 'btn btn-sm bg-gradient-dark ']) !!}
-    <a href="{{ route('categories.index') }}" class="btn btn-sm btn-light">Annuler</a>
+<div class="form-group col-sm-12 pull-right">
+    <a href="{{ route('categories.index') }}" class="btn btn-light">Annuler</a>
+    {!! Form::submit('Save', ['class' => 'btn bg-gradient-dark ']) !!}
 </div>
