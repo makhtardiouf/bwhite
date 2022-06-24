@@ -16,6 +16,7 @@
                 <input type="search" class="form-control" id="search-input" placeholder="Rechercher..." aria-label="Rechercher..." autocomplete="off" data-bd-docs-version="5.0">
             </form>
         </div>
+        
         <div class="col-2 mt-4">
             @include('layouts.navbars.guest.nav')
         </div>

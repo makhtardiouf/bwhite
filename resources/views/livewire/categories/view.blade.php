@@ -15,15 +15,16 @@
 						<div>
 							<input wire:model='keyWord' type="text" class="form-control" name="search" id="search" placeholder="Recherche">
 						</div>
-						<div class="btn bg-gradient-dark btn-sm" data-toggle="modal" data-target="#createDataModal">
-						<i class="fa fa-plus"></i> Ajouter
-						</div>
+						<button type="button" class="btn bg-gradient-dark btn-sm" data-toggle="modal" data-target="#createDataModal" >
+							<i class="fa fa-plus"></i> Ajouter
+						</button>
 					</div>
 				</div>
 				
 				<div class="card-body">
 						@include('livewire.categories.create')
 						@include('livewire.categories.update')
+
 				<div class="table-responsive">
 					<table class="table table-bordered table-sm">
 						<thead class="thead">

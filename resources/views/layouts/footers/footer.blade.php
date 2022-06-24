@@ -12,7 +12,7 @@
               Apropos
           </a>
           <br>
-          <i class="fa-solid fa-phone text-black"></i>
+          <span class="text text-info"><i class="fa-solid fa-phone"></i></span>
           <span class="fs-5 text-center text-info text-gradient"> <a href="tel:+221338362883">33-836-28-83</a> / <a href="tel:+221780103636">78-010-3636</a></span>
         </div>
 
