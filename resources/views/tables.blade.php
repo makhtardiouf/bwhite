@@ -46,8 +46,8 @@
                         <span class="text-secondary text-xs font-weight-bold">23/04/18</span>
                       </td>
                       <td class="align-middle">
-                        <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                          Edit
+                        <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Editer user">
+                          Editer
                         </a>
                       </td>
                     </tr>
@@ -74,8 +74,8 @@
                         <span class="text-secondary text-xs font-weight-bold">11/01/19</span>
                       </td>
                       <td class="align-middle">
-                        <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                          Edit
+                        <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Editer user">
+                          Editer
                         </a>
                       </td>
                     </tr>
@@ -102,8 +102,8 @@
                         <span class="text-secondary text-xs font-weight-bold">19/09/17</span>
                       </td>
                       <td class="align-middle">
-                        <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                          Edit
+                        <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Editer user">
+                          Editer
                         </a>
                       </td>
                     </tr>
@@ -130,8 +130,8 @@
                         <span class="text-secondary text-xs font-weight-bold">24/12/08</span>
                       </td>
                       <td class="align-middle">
-                        <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                          Edit
+                        <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Editer user">
+                          Editer
                         </a>
                       </td>
                     </tr>
@@ -158,8 +158,8 @@
                         <span class="text-secondary text-xs font-weight-bold">04/10/21</span>
                       </td>
                       <td class="align-middle">
-                        <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                          Edit
+                        <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Editer user">
+                          Editer
                         </a>
                       </td>
                     </tr>
@@ -186,8 +186,8 @@
                         <span class="text-secondary text-xs font-weight-bold">14/09/20</span>
                       </td>
                       <td class="align-middle">
-                        <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                          Edit
+                        <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Editer user">
+                          Editer
                         </a>
                       </td>
                     </tr>

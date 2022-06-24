@@ -33,7 +33,7 @@ Route::group(['middleware' => 'auth'], function () {
 		return view('dashboard');
 	})->name('dashboard');
 	
-	Route::view('categories', 'livewire.categories.index')->name('categories');
+	//Route::view('categories', 'livewire.categories.index')->name('categories');
 	//Route::get('category/create', Categories::class );
 
 	Route::get('billing', function () {
@@ -52,10 +52,6 @@ Route::group(['middleware' => 'auth'], function () {
 		return view('tables');
 	})->name('tables');
 
-    Route::get('virtual-reality', function () {
-		return view('virtual-reality');
-	})->name('virtual-reality');
-
     Route::get('static-sign-in', function () {
 		return view('static-sign-in');
 	})->name('sign-in');
@@ -70,6 +66,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/login', function () {
 		return view('dashboard');
 	})->name('sign-up');
+
+
+	Route::resource('categories', App\Http\Controllers\CategoryController::class);
+
 });
 
 
@@ -98,3 +98,5 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+
