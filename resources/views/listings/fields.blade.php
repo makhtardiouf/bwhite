@@ -2,7 +2,7 @@
 <div class="row">
     <div class="form-group col-sm-6">
         {!! Form::label('title', 'Titre:') !!}
-        {!! Form::text('title', null, ['class' => 'form-control']) !!}
+        {!! Form::text('title', null, ['class' => 'form-control', 'required' => 'true']) !!}
     </div>
 </div>
 <div class="row">
@@ -29,7 +29,7 @@
 <!-- Prix Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('price', 'Prix:') !!}
-    {!! Form::number('price', null, ['class' => 'form-control']) !!}
+    {!! Form::number('price', null, ['class' => 'form-control', 'required' => 'true']) !!}
 </div>
 
 <div class="clearfix"></div>

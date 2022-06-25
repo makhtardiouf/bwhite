@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -19,53 +20,52 @@
   <link rel="icon" type="image/png" href="../assets/img/favicon.ico">
 </head>
 
-<body class="g-sidenav-show  bg-gray-100">
-  @auth
+@auth
+  <body class="g-sidenav-show bg-gray-100">
   @yield('auth')
-  @endauth
-  @guest
+@endauth
+
+@guest
+  <body class="bg-gray-100">
   @yield('guest')
-  @endguest
+@endguest
 
-  @if(session()->has('success'))
-  <div x-data="{ show: true}" x-init="setTimeout(() => show = false, 4000)" x-show="show" class="position-fixed bg-success rounded right-3 text-sm py-2 px-4">
-    <p class="m-0">{{ session('success')}}</p>
-  </div>
-  @endif
-  <!--   Core JS Files   -->
-  <script src="../assets/js/core/popper.min.js"></script>
-  <script src="../assets/js/core/bootstrap.min.js"></script>
-  <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
-  <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
-  <script src="../assets/js/plugins/fullcalendar.min.js"></script>
-  <script src="../assets/js/plugins/chartjs.min.js"></script>
+    @if(session()->has('success'))
+    <div x-data="{ show: true}" x-init="setTimeout(() => show = false, 4000)" x-show="show" class="position-fixed bg-success rounded right-3 text-sm py-2 px-4">
+      <p class="m-0">{{ session('success')}}</p>
+    </div>
+    @endif
+    <!--   Core JS Files   -->
+    <script src="../assets/js/core/popper.min.js"></script>
+    <script src="../assets/js/core/bootstrap.min.js"></script>
+    <script src="../assets/js/plugins/chartjs.min.js"></script>
 
-  @stack('dashboard')
+    @stack('dashboard')
 
-  <script>
-    var win = navigator.platform.indexOf('Win') > -1;
-    if (win && document.querySelector('#sidenav-scrollbar')) {
-      var options = {
-        damping: '0.5'
+    <script>
+      var win = navigator.platform.indexOf('Win') > -1;
+      if (win && document.querySelector('#sidenav-scrollbar')) {
+        var options = {
+          damping: '0.5'
+        }
+        Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
       }
-      Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
-    }
-  </script>
+    </script>
 
-  <!-- Github buttons -->
-  <script async defer src="https://buttons.github.io/buttons.js"></script>
-  <script src="../assets/js/soft-ui-dashboard.min.js?v=1.0.3"></script>
+    <!-- Github buttons -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script src="../assets/js/soft-ui-dashboard.min.js?v=1.0.3"></script>
 
-  @livewireScripts
-  <!-- <script src="{{ asset('js/app.js') }}"></script> -->
-  @yield('extrascripts')
+    @livewireScripts
+    <!-- <script src="{{ asset('js/app.js') }}"></script> -->
+    @yield('extrascripts')
 
-  <script type="text/javascript">
-    window.livewire.on('closeModal', () => {
-      $('#createDataModal').modal('hide');
-    });
-  </script>
+    <script type="text/javascript">
+      window.livewire.on('closeModal', () => {
+        $('#createDataModal').modal('hide');
+      });
+    </script>
 
-</body>
+  </body>
 
 </html>

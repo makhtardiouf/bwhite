@@ -1,7 +1,7 @@
 <!-- Name Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('name', 'Nom:') !!}
-    {!! Form::text('name', null, ['class' => 'form-control']) !!}
+    {!! Form::text('name', null, ['class' => 'form-control', 'required' => 'true']) !!}
 </div>
 <div class="clearfix"></div>
 
@@ -16,7 +16,7 @@
 <!-- Priority Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('priority', 'Priorité (1-10):') !!}
-    {!! Form::number('priority', null, ['class' => 'form-control']) !!}
+    {!! Form::number('priority', "1", ['class' => 'form-control']) !!}
 </div>
 <div class="clearfix"></div>
 
