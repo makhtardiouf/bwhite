@@ -46,15 +46,14 @@
                         <li><a class="dropdown-item" href="#">Plomberie</a></li>
                     </ul>
                 </li>
-                <li class="nav-item ml-8">
-                    <form class="d-flex">
-                        <input class="form-control" type="search" placeholder="Rechercher" aria-label="Search">
-                        <!-- <button class="" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button> -->
-                    </form>
-                </li>
                 @endauth
             </ul>
-
+            @guest
+            <form class="d-flex">
+                <input class="form-control" type="search" placeholder="Rechercher" aria-label="Search">
+                <!-- <button class="" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button> -->
+            </form>
+            @endguest
         </div>
     </div>
 </nav>
