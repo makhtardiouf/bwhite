@@ -2,7 +2,7 @@
 
 @section('guest')
 @if(\Request::is('login/forgot-password'))
-@include('layouts.navbars.guest.nav')
+@include('layouts.navbars.nav')
 @yield('content')
 @else
 <div class="container-fluid">
@@ -18,7 +18,7 @@
         </div>
         
         <div class="col-2 mt-4">
-            @include('layouts.navbars.guest.nav')
+            @include('layouts.navbars.nav')
         </div>
     </div>
 </div>
