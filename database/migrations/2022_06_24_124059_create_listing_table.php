@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Category;
+use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -24,13 +26,14 @@ class CreateListingTable extends Migration
             $table->string('area')->nullable();
             $table->boolean('approved')->default(false);
 
-            $table->integer('category_id')->nullable();
-            $table->foreignId('approver_id')->nullable();
+            $table->foreignIdFor(Category::class)->nullable();
+            $table->foreignIdFor(User::class)->nullable();
+            $table->integer('approver_id')->nullable();
 
             $table->timestamps();
             $table->softDeletes();
-            $table->foreign('category_id')->references('id')->on('category');
-            $table->foreign('approver_id')->references('id')->on('users');
+            //$table->foreign('category_id')->references('id')->on('category');
+            //$table->foreign('approver_id')->references('id')->on('users');
         });
     }
 
