@@ -1,6 +1,6 @@
 <!-- Titre de l'annonce Field -->
 <div class="form-group">
-    {!! Form::label('title', "Titre de l'annonce:") !!}
+    {!! Form::label('title', "") !!}
     <p>{{ $listing->title }}</p>
 </div>
 
@@ -12,7 +12,7 @@
 
 <!-- Category Field -->
 <div class="form-group">
-    {!! Form::label('category', 'Category:') !!}
+    {!! Form::label('category', 'Catéorie:') !!}
     <p>{{ $listing->category }}</p>
 </div>
 
@@ -30,19 +30,15 @@
 
 <!-- Area Field -->
 <div class="form-group">
-    {!! Form::label('area', 'Area:') !!}
+    {!! Form::label('area', 'Zone géographique:') !!}
     <p>{{ $listing->area }}</p>
 </div>
 
-<!-- Created At Field -->
-<div class="form-group">
-    {!! Form::label('created_at', 'Created At:') !!}
-    <p>{{ $listing->created_at }}</p>
-</div>
+<!
 
 <!-- Updated At Field -->
 <div class="form-group">
-    {!! Form::label('updated_at', 'Updated At:') !!}
+    {!! Form::label('updated_at', 'Dernière mise à jour:') !!}
     <p>{{ $listing->updated_at }}</p>
 </div>
 

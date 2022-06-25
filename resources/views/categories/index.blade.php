@@ -5,7 +5,7 @@
 @section('content')
     <section class="section">
         <div class="section-header">
-            <h3>Catégories</h3>
+            <h4>Catégories</h4>
             <div class="section-header-breadcrumb">
                 <a href="{{ route('categories.create')}}" class="btn btn-sm bg-gradient-dark ">Ajouter</a>
             </div>
