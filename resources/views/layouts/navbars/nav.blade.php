@@ -12,17 +12,23 @@
                         <i class="fa fa-chart-pie opacity-6 me-1"></i> Dashboard</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/listings">Annonces</a>
+                    <a class="nav-link" href="/listings">
+                    <i class="fa-solid fa-file-lines"></i> Annonces</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="{{ url('/logout')}}" aria-current="page" href="#">Déconnexion</a>
+                    <a class="nav-link" href="/categories">
+                    <i class="fa-solid fa-file-lines"></i> Catégories</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="{{ url('/logout')}}" aria-current="page" href="#">
+                        <i class="fa-solid fa-right-from-bracket"></i></a>
                 </li>
 
                 @else
                 <!-- Not Logged in -->
                 <li>
                     <form class="container-fluid justify-content-start">
-                        <button class="btn bg-gradient-dark me-2" type="button">Véhicules</button>
+                        <button class="btn bg-gradient-dark me-2" type="button"><a href="/" class="text-white">Véhicules</a></button>
                         <button class="btn bg-gradient-dark" type="button">Immobilier</button>
                         <button class="btn bg-gradient-dark" type="button">Electromenager</button>
                         <button class="btn bg-gradient-dark">Informatique</button>
@@ -40,24 +46,12 @@
                         <li><a class="dropdown-item" href="#">Plomberie</a></li>
                     </ul>
                 </li>
-
-                <li class="nav-item">
-                    <a class="nav-link active" href="{{ url('register') }} " aria-current="page" href="#">
-                        <i class="fas fa-2x fa-user-circle text-black"></i>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="{{ url('login') }} " aria-current="page" href="#">
-                        <i class="fa-2x fa-solid fa-key"></i>
-                    </a>
-                </li>
-
                 <li class="nav-item ml-8">
-                <form class="d-flex">
-                    <input class="form-control" type="search" placeholder="Rechercher" aria-label="Search">
-                    <button class="" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-                </form>
-</li>
+                    <form class="d-flex">
+                        <input class="form-control" type="search" placeholder="Rechercher" aria-label="Search">
+                        <!-- <button class="" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button> -->
+                    </form>
+                </li>
                 @endauth
             </ul>
 
