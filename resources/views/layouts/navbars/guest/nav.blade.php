@@ -35,11 +35,7 @@
             <i class="fas fa-2x fa-key me-1 text-black"></i>
           </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link me-2" href="#" target="_blank">
-            <i class="fa-solid fa-mobile-screen  text-blue"></i>
-          </a>
-        </li>
+        
       </ul>
     </div>
   </div>

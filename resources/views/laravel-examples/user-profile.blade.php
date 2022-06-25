@@ -60,7 +60,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="user-name" class="form-control-label">{{ __('Full Name') }}</label>
+                                <label for="user-name" class="form-control-label">{{ __('Prénoms et Nom') }}</label>
                                 <div class="@error('user.name')border border-danger rounded-3 @enderror">
                                     <input class="form-control" value="{{ auth()->user()->name }}" type="text" placeholder="Name" id="user-name" name="name">
                                         @error('name')
@@ -103,7 +103,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="about">{{ 'About Me' }}</label>
+                        <label for="about">{{ 'Apropos' }}</label>
                         <div class="@error('user.about')border border-danger rounded-3 @enderror">
                             <textarea class="form-control" id="about" rows="3" placeholder="Say something about yourself" name="about_me">{{ auth()->user()->about_me }}</textarea>
                         </div>

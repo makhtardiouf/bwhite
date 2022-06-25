@@ -15,7 +15,8 @@
         "laravel/jetstream": "^2.8",
         "laravel/sanctum": "^2.15",
         "laravel/tinker": "^2.6",
-        "livewire/livewire": "^2.5"
+        "livewire/livewire": "^2.5",
+        "rahulhaque/laravel-filepond": "^1.8"
     },
     "require-dev": {
         "spatie/laravel-ignition": "^1.0",

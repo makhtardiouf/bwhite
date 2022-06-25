@@ -22,10 +22,15 @@ class CreateListingTable extends Migration
             $table->double('price');
             $table->string('image')->nullable();
             $table->string('area')->nullable();
-            $table->integer('category_id')->unsigned()->nullable();
+            $table->boolean('approved')->default(false);
+
+            $table->integer('category_id')->nullable();
+            $table->foreignId('approver_id')->nullable();
+
             $table->timestamps();
             $table->softDeletes();
             $table->foreign('category_id')->references('id')->on('category');
+            $table->foreign('approver_id')->references('id')->on('users');
         });
     }
 

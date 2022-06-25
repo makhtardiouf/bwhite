@@ -21,7 +21,7 @@
 
 <!-- Image Field -->
 <div class="form-group col-sm-6 ">
-    {!! Form::label('image', 'Image:') !!}
+    {!! Form::label('image', 'Images:') !!}
     {!! Form::file('image', ['class' => 'form-control', 'multiple' => 'true'])!!}
 </div>
 <div class="clearfix"></div>
@@ -32,15 +32,17 @@
     {!! Form::number('price', null, ['class' => 'form-control']) !!}
 </div>
 
+<div class="clearfix"></div>
 <!-- Description Field -->
-<div class="form-group col-sm-8 col-lg-8">
+<div class="form-group col-sm-6">
     {!! Form::label('description', 'Description:') !!}
     {!! Form::textarea('description', null, ['rows' => '30', 'class' => 'form-control']) !!}
 </div>
 
+<div class="clearfix"></div>
 
 <!-- Submit Field -->
-<div class="form-group col-sm-12 float-right">
+<div class="form-group col-sm-6 float-right">
     <a href="{{ route('listings.index') }}" class="btn btn-light m-2">Annuler</a>
     {!! Form::submit('Enregistrer', ['class' => 'btn bg-gradient-dark  m-2']) !!}
 </div>
