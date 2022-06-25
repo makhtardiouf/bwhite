@@ -3,27 +3,33 @@
     {!! Form::label('name', 'Nom:') !!}
     {!! Form::text('name', null, ['class' => 'form-control']) !!}
 </div>
-
-<!-- Description Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('description', 'Description:') !!}
-    {!! Form::text('description', null, ['class' => 'form-control']) !!}
-</div>
+<div class="clearfix"></div>
 
 <!-- Icon Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('icon', 'Icone:') !!}
     {!! Form::text('icon', null, ['class' => 'form-control']) !!}
 </div>
+<div class="clearfix"></div>
+
 
 <!-- Priority Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('priority', 'Priorité:') !!}
+    {!! Form::label('priority', 'Priorité (1-10):') !!}
     {!! Form::number('priority', null, ['class' => 'form-control']) !!}
+</div>
+<div class="clearfix"></div>
+
+<!-- Description Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('description', 'Description:') !!}
+    {!! Form::textarea('description', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Submit Field -->
 <div class="form-group col-sm-12 pull-right">
-    <a href="{{ route('categories.index') }}" class="btn btn-light">Annuler</a>
-    {!! Form::submit('Save', ['class' => 'btn bg-gradient-dark ']) !!}
+
+    <a href="{{ route('categories.index') }}" class="btn btn-light m-2">Annuler</a>
+
+    {!! Form::submit('Enregistrer', ['class' => 'btn bg-gradient-dark m-2']) !!}
 </div>
