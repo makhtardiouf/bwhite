@@ -4,12 +4,6 @@
     <p>{{ $listing->title }}</p>
 </div>
 
-<!-- Description Field -->
-<div class="form-group">
-    {!! Form::label('description', 'Description:') !!}
-    <p>{{ $listing->description }}</p>
-</div>
-
 <!-- Category Field -->
 <div class="form-group">
     {!! Form::label('category', 'Catéorie:') !!}
@@ -24,7 +18,6 @@
 
 <!-- Image Field -->
 <div class="form-group">
-    {!! Form::label('image', 'Image:') !!}
     <p><img class="img-thumbnail border-radius-xl" src="{{ asset('storage/'.$listing->image) }}"></p>
 </div>
 
@@ -34,7 +27,12 @@
     <p>{{ $listing->area }}</p>
 </div>
 
-<!
+
+<!-- Description Field -->
+<div class="form-group">
+    {!! Form::label('description', 'Description:') !!}
+    <p><textarea id="description" readonly>{{ $listing->description }}</textarea></p>
+</div>
 
 <!-- Updated At Field -->
 <div class="form-group">

@@ -21,3 +21,20 @@ Contenu de l'annonce
     </div>
 </section>
 @endsection
+
+@section('extrascripts')
+@section('extrascripts')
+<script src="https://cdn.ckeditor.com/ckeditor5/34.1.0/classic/ckeditor.js"></script>
+<script>
+    var editor = ClassicEditor
+        .create(document.querySelector('#description'))
+        .then(editor => {
+            editor.enableReadOnlyMode('description');
+            editor.isReadOnly;
+            console.log(editor);
+        })
+        .catch(error => {
+            console.error(error);
+        });
+</script>
+@endsection
