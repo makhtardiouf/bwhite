@@ -13,7 +13,8 @@
             <tr>
                 <td>{{ $listing->title }}</td>
                 <td>{{ $listing->category }}</td>
-                <td>{{ $listing->image }}</td>
+                <td><img class="img-fluid" src="{{ url('storage/app/public/'.$listing->image) }}">  </td>
+                
                 <td class=" text-center">
                     {!! Form::open(['route' => ['listings.destroy', $listing->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>

@@ -6,7 +6,11 @@ use App\Http\Requests\CreateListingRequest;
 use App\Http\Requests\UpdateListingRequest;
 use App\Repositories\ListingRepository;
 use App\Http\Controllers\AppBaseController;
+
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Log;
+use RahulHaque\Filepond\Facades\Filepond;
 use Flash;
 use Response;
 
@@ -55,6 +59,21 @@ class ListingController extends AppBaseController
     public function store(CreateListingRequest $request)
     {
         $input = $request->all();
+        Log::debug("Listing record " . json_encode($input) . "\n" . json_encode($request));
+
+        $filename = $request->file('image')->store('public');
+        // "listing" . date('Ymd');
+        // $fileInfo = Filepond::field($request->image)
+        //     ->moveTo("app/public/" . $filename);
+
+        if(empty($filename)) {
+            Log::debug("Failed to obtain uploaded image"); 
+        } else {
+            
+           // $input["image"] = $fileInfo["dirname"]."/".$fileInfo["basename"];
+           $input["image"] = $filename;
+        }
+        Log::debug("Uploaded file: " . $filename);
 
         $listing = $this->listingRepository->create($input);
 

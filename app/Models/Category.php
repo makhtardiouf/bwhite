@@ -26,10 +26,7 @@ class Category extends Model
 
     public $table = 'category';
     
-
     protected $dates = ['deleted_at'];
-
-
 
     public $fillable = [
         'name',
