@@ -52,7 +52,7 @@
       </li>
 
       <li class="nav-item pb-2">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="/packs">
           <i class="fa-solid fa-gifts"></i>
           <span class="nav-link-text ms-1">Packs</span>
         </a>
@@ -86,19 +86,22 @@
     </a>
   </div>
 
-  <div class="collapse navbar-collapse w-auto" id="sidenav-collapse-main">
+  <div class="collapse navbar-collapse w-auto " id="sidenav-collapse-main">
     <ul class="navbar-nav">
       <!-- Not Logged in -->
       <li class="nav-item">
         <form class="container-fluid justify-content-start">
-          <button class="btn btn-outline text-black"><a href="/">Véhicules</a></button>
+          <a href="/"><i class="fa-solid fa-cars text-dark"></i>
+          <button class="btn btn-outline text-black text-dark">
+             Véhicules</a>
+          </button>
           <button class="btn btn-outline text-black">Immobilier</button>
           <button class="btn btn-outline text-black">Electromenager</button>
           <button class="btn btn-outline text-black">Informatique</button>
         </form>
       </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle text-black" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      <li class="nav-item dropdown text-black">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
           <span class="text-black">Divers</span>
         </a>
         <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
@@ -110,6 +113,12 @@
         </ul>
       </li>
 
+      <li class="nav-item">
+        <a class="btn text-black" href="/packs">
+          <i class="fa-solid fa-gifts"></i>
+          <span class="nav-link-text ms-1">Packs</span>
+        </a>
+      </li>
     </ul>
   </div>
 </aside>

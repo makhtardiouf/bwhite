@@ -27,6 +27,16 @@ Route::get('/', function () {
 	return view('home');
 })->name('home');
 
+
+Route::get('/login', function () {
+    return view('session/login-session');
+})->name('login');
+
+Route::get('/packs', function () {
+	return view('packs.list');
+})->name('packs');
+
+
 Route::group(['middleware' => 'auth'], function () {
 
 	Route::get('dashboard', function () {
@@ -85,10 +95,6 @@ Route::group(['middleware' => 'guest'], function () {
 	Route::post('/reset-password', [ChangePasswordController::class, 'changePassword'])->name('password.update');
 
 });
-
-Route::get('/login', function () {
-    return view('session/login-session');
-})->name('login');
 
 // Route::middleware([
 //     'auth:sanctum',
