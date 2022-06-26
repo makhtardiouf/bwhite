@@ -1,16 +1,16 @@
-@extends('layouts.user_type.auth')
+@extends('layouts.app')
 @section('title')
 Contenu de l'annonce
 @endsection
 @section('content')
 <section class="section">
     <div class="section-header">
-        <h4>Contenu de l'annonce</h4>
+        <h4 class="text-info text-gradient-dark">Contenu de l'annonce</h4>
     </div>
     @include('adminlte-templates::common.errors')
     <div class="section-body">
         <div class="card">
-            <div class="card-body col-8">
+            <div class="card-body col-md-12 col-lg-8">
                 @include('listings.show_fields')
 
                 <div class="section-header-breadcrumb">
