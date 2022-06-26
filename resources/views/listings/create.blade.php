@@ -17,7 +17,7 @@ Create Listing
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-body ">
-                            {!! Form::open(['route' => 'listings.store', 'files' => true]) !!}
+                            {!! Form::open(['route' => 'listings.store', 'files' => true, 'role' => 'form text-left']) !!}
                             <div class="row">
                                 @include('listings.fields')
                             </div>

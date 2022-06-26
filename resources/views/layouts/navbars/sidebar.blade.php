@@ -1,28 +1,38 @@
 @auth
-<aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-1 fixed-start ms-3 " id="sidenav-main">
+<aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 position-absolute  bg-gradient-dark" id="sidenav-main">
   <div class="sidenav-header">
-    <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none"></i>
-    <a class="align-items-center navbar-brand text-wrap" href="{{ route('dashboard') }}">
-      <img src="{{ asset('assets/img/bwhite5-logo.jpeg') }}" class="img-fluid"/>
+    <i class="fas fa-times p-3 cursor-pointer text-white opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
+    <a class="navbar-brand m-0" href="javascript:;" target="_blank">
+      <img src="{{ asset('assets/img/bwhite5-logo.jpeg') }}" class="navbar-brand-img h-100" alt="main_logo">
     </a>
   </div>
-  <hr class="horizontal dark mt-0">
+ 
+  <hr class="horizontal light mt-0 mb-2">
+  <div class="d-flex align-items-center justify-content-cente ms-4 my-3">
+    <img src="https://demos.creative-tim.com/material-dashboard/assets/img/team-2.jpg" class="avatar avatar-sm">
+    <div class="ms-2">
+      <h6 class="text-sm text-white mb-0">Matthew Cambell</h6>
+      <p class="text-xs text-white opacity-5 mb-0">Web Developer</p>
+    </div>
+  </div>
+  <hr class="horizontal light mt-0 mb-2">
+
   <div class="collapse navbar-collapse w-auto" id="sidenav-collapse-main">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" href="/dashboard">
+        <a class="nav-link text-white active bg-gradient-primary" href="/dashboard">
           <i class="fa-solid fa-gauge"></i> <span class="nav-link-text ms-1">Dashboard</span>
         </a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="/">
+        <a class="nav-link text-white" href="/">
           <i class="fa-solid fa-house"></i> <span class="nav-link-text ms-1">Site Publique</span>
         </a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link {{ (Request::is('user-profile') ? 'active' : '') }} " href="{{ url('user-profile') }}">
+        <a class="nav-link text-white" href="{{ url('user-profile') }}">
           <i class="fa-solid fa-user"></i> <span class="nav-link-text ms-1">Profile</span>
         </a>
       </li>
@@ -55,11 +65,37 @@
         </a>
       </li>
 
+      <li class="nav-item pb-2">
+        <a class="nav-link" href="/logout">
+          <i class="fa-solid fa-store"></i>
+          <span class="nav-link-text ms-1">Déconnexion</span>
+        </a>
+      </li>
+
     </ul>
   </div>
 
 </aside>
 
 @else
+<aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 position-absolute  bg-gradient-dark" id="sidenav-main">
+  <div class="sidenav-header">
+    <i class="fas fa-times p-3 cursor-pointer text-white opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
+    <a class="navbar-brand m-0" href="javascript:;" target="_blank">
+      <img src="{{ asset('assets/img/bwhite5-logo.jpeg') }}" class="navbar-brand-img h-100" alt="main_logo">
+    </a>
+  </div>
+  
+  <div class="collapse navbar-collapse w-auto" id="sidenav-collapse-main">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link text-white active bg-gradient-primary" href="/dashboard">
+          <i class="fa-solid fa-gauge"></i> <span class="nav-link-text ms-1">Dashboard</span>
+        </a>
+      </li>
+
+  </div>
+
+</aside>
 
 @endauth
