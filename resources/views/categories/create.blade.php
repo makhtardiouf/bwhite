@@ -5,7 +5,7 @@
 @section('content')
     <section class="section">
         <div class="section-header">
-            <h3 class="page__heading m-0">Nouvelle Catégorie</h3>
+            <h3 class="page__heading m-2">Nouvelle Catégorie</h3>
             
         </div>
         <div class="content">

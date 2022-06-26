@@ -19,7 +19,7 @@
                     </a>
                 </div>
                 <div class="card-body px-1 pb-0">
-                    <a href="javascript:;">
+                    <a href="/">
                     <h5>
                         Dakar
                     </h5>
@@ -30,10 +30,10 @@
                     <div class="d-flex align-items-center justify-content-between">
                     <button type="button" class="btn btn-outline-primary btn-sm mb-0">Voir</button>
                     <div class="avatar-group mt-2">
-                        <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Elena Morison">
+                        <a href="/" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Elena Morison">
                         <img alt="Image placeholder" src="../assets/img/team-1.jpg">
                         </a>
-                        <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ryan Milly">
+                        <a href="/" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ryan Milly">
                         <img alt="Image placeholder" src="../assets/img/team-2.jpg">
                         </a>
                     </div>
@@ -49,7 +49,7 @@
                     </a>
                 </div>
                 <div class="card-body px-1 pb-0">
-                    <a href="javascript:;">
+                    <a href="/">
                     <h5>
                         Thies
                     </h5>
@@ -60,10 +60,10 @@
                     <div class="d-flex align-items-center justify-content-between">
                     <button type="button" class="btn btn-outline-primary btn-sm mb-0">Voir</button>
                     <div class="avatar-group mt-2">
-                        <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Elena Morison">
+                        <a href="/" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Elena Morison">
                         <img alt="Image placeholder" src="../assets/img/team-1.jpg">
                         </a>
-                        <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ryan Milly">
+                        <a href="/" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ryan Milly">
                         <img alt="Image placeholder" src="../assets/img/team-2.jpg">
                         </a>
                     </div>
@@ -79,7 +79,7 @@
                     </a>
                 </div>
                 <div class="card-body px-1 pb-0">
-                    <a href="javascript:;">
+                    <a href="/">
                     <h5>
                         Saint-Louis
                     </h5>
@@ -90,10 +90,10 @@
                     <div class="d-flex align-items-center justify-content-between">
                     <button type="button" class="btn btn-outline-primary btn-sm mb-0">Voir</button>
                     <div class="avatar-group mt-2">
-                        <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Elena Morison">
+                        <a href="/" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Elena Morison">
                         <img alt="Image placeholder" src="../assets/img/team-1.jpg">
                         </a>
-                        <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ryan Milly">
+                        <a href="/" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ryan Milly">
                         <img alt="Image placeholder" src="../assets/img/team-2.jpg">
                         </a>
                     </div>
@@ -104,7 +104,7 @@
             <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
                 <div class="card h-100 card-plain border">
                 <div class="card-body d-flex flex-column justify-content-center text-center">
-                    <a href="javascript:;">
+                    <a href="/">
                     <i class="fa fa-plus text-secondary mb-3"></i>
                     <h5 class="text-success text-gradient font-weight-bold"> Ajoutez une annonce </h5>
                     </a>
@@ -135,7 +135,7 @@
                     </a>
                 </div>
                 <div class="card-body px-1 pb-0">
-                    <a href="javascript:;">
+                    <a href="/">
                     <h5>
                         Ordinateurs
                     </h5>
@@ -146,10 +146,10 @@
                     <div class="d-flex align-items-center justify-content-between">
                     <button type="button" class="btn btn-outline-primary btn-sm mb-0">Voir</button>
                     <div class="avatar-group mt-2">
-                        <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Elena Morison">
+                        <a href="/" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Elena Morison">
                         <img alt="Image placeholder" src="../assets/img/team-1.jpg">
                         </a>
-                        <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ryan Milly">
+                        <a href="/" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ryan Milly">
                         <img alt="Image placeholder" src="../assets/img/team-2.jpg">
                         </a>
                     </div>
@@ -165,7 +165,7 @@
                     </a>
                 </div>
                 <div class="card-body px-1 pb-0">
-                    <a href="javascript:;">
+                    <a href="/">
                     <h5>
                         Tablettes
                     </h5>
@@ -176,10 +176,10 @@
                     <div class="d-flex align-items-center justify-content-between">
                     <button type="button" class="btn btn-outline-primary btn-sm mb-0">Voir</button>
                     <div class="avatar-group mt-2">
-                        <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Elena Morison">
+                        <a href="/" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Elena Morison">
                         <img alt="Image placeholder" src="../assets/img/team-1.jpg">
                         </a>
-                        <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ryan Milly">
+                        <a href="/" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ryan Milly">
                         <img alt="Image placeholder" src="../assets/img/team-2.jpg">
                         </a>
                     </div>
@@ -195,7 +195,7 @@
                     </a>
                 </div>
                 <div class="card-body px-1 pb-0">
-                    <a href="javascript:;">
+                    <a href="/">
                     <h5>
                         Laptop
                     </h5>
@@ -206,10 +206,10 @@
                     <div class="d-flex align-items-center justify-content-between">
                     <button type="button" class="btn btn-outline-primary btn-sm mb-0">Voir</button>
                     <div class="avatar-group mt-2">
-                        <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Elena Morison">
+                        <a href="/" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Elena Morison">
                         <img alt="Image placeholder" src="../assets/img/team-1.jpg">
                         </a>
-                        <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ryan Milly">
+                        <a href="/" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ryan Milly">
                         <img alt="Image placeholder" src="../assets/img/team-2.jpg">
                         </a>
                     </div>
@@ -220,7 +220,7 @@
             <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
                 <div class="card h-100 card-plain border">
                 <div class="card-body d-flex flex-column justify-content-center text-center">
-                    <a href="javascript:;">
+                    <a href="/">
                     <i class="fa fa-plus text-secondary mb-3"></i>
                     <h5 class=" text-success text-gradient font-weight-bold"> Ajoutez une annonce </h5>
                     </a>

@@ -1,14 +1,23 @@
 <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarTop">
     <div class="container-fluid py-1 px-3">
         <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
-            <div class="ms-md-auto pe-md-3 d-flex align-items-center">
-
+            <div class="ms-md-auto d-flex align-items-center">
                 <div class="input-group input-group-outline">
                     <label class="form-label">Rechercher...</label>
                     <input type="text" class="form-control" onfocus="focused(this)" onfocusout="defocused(this)">
                 </div>
             </div>
+
             <ul class="navbar-nav justify-content-end">
+                @guest
+                    <li class="nav-item d-flex align-items-center m-2">
+                        <a class="text-dark" href="{{ url('register') }}"><i class="fas fa-user-circle"></i></a>
+                    </li>
+                    <li class="nav-item d-flex align-items-center m-2">
+                        <a class="text-dark" href="{{ url('login') }}"><i class="fa-solid fa-key"></i></a>
+                    </li>
+                @endguest
+
                 <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
                     <a href="javascript:;" class="nav-link m-2 text-body" id="iconNavbarSidenav">
                         <div class="sidenav-toggler-inner text-info">
@@ -21,26 +30,20 @@
 
                 @auth
                 <li class="nav-item d-flex align-items-center me-1 ml-2">
-                    <a class="nav-link font-weight-bold px-0 text-body" href="{{ url('dashboard') }}">
+                    <a class="nav-link font-weight-bold px-1 text-body" href="{{ url('dashboard') }}">
                         <i class="fa fa-chart-pie opacity-6"></i> Dashboard</a>&nbsp;
                 </li>
                 <li class="nav-item d-flex align-items-center me-1">
-                    <a class="nav-link font-weight-bold px-0 text-body" href="/listings">
+                    <a class="nav-link font-weight-bold px-1 text-body" href="/listings">
                         <i class="fa-solid fa-file-lines"></i>
-                         Annonces
+                        Annonces
                     </a>
                 </li>
-
-                <li class="nav-item d-flex align-items-center">
-                    <a class="nav-link font-weight-bold px-0 text-body" href="{{ url('/logout')}}">
-                        &nbsp; <i class="fa-solid fa-right-from-bracket"></i></a>&nbsp;
-                </li>
-
-                <li class="nav-item dropdown pe-2 d-flex align-items-center">
-                    <a href="javascript:;" class="nav-link p-0 text-body" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                <li class="nav-item dropdown  d-flex align-items-center">
+                    <a href="javascript:;" class="nav-link px-1 text-body" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="fa fa-bell cursor-pointer" aria-hidden="true"></i>
                     </a>
-                    <ul class="dropdown-menu  dropdown-menu-end  px-2 py-3 me-sm-n4" aria-labelledby="dropdownMenuButton">
+                    <ul class="dropdown-menu  dropdown-menu-end py-3 me-sm-n4" aria-labelledby="dropdownMenuButton">
                         <li class="mb-2">
                             <a class="dropdown-item border-radius-md" href="javascript:;">
                                 <div class="d-flex py-1">
@@ -62,6 +65,12 @@
 
                     </ul>
                 </li>
+
+                <li class="nav-item d-flex align-items-center">
+                    <a class="nav-link font-weight-bold text-body" href="{{ url('/logout')}}">
+                        &nbsp; <i class="fa-solid fa-right-from-bracket"></i></a>&nbsp;
+                </li>
+
                 @endauth
             </ul>
         </div>

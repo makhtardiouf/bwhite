@@ -3,12 +3,9 @@
 @section('content')
 
 <section class="mb-8">
-  <!-- <div class="page-header align-items-start min-vh-50 pt-5 pb-11 mx-3 border-radius-lg" style="background-image: url('../assets/img/curved-images/curved14.jpg');">
-      <span class="mask opacity-6"></span>
-    </div> -->
-  <div class="container ">
+  <div class="container">
     <div class="row">
-      <div class="col-xl-4 col-lg-5 col-md-7 mx-auto">
+      <div class="col-md-12 col-lg-5 mx-auto">
         <div class="card z-index-0">
           <div class="card-header text-center pt-4">
             <h5 class="text-info text-gradient font-weight-bold">Ouvrir un compte</h5>
