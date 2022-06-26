@@ -36,7 +36,7 @@
 <!-- Description Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('description', 'Description:') !!}
-    {!! Form::textarea('description', null, ['rows' => '30', 'class' => 'form-control']) !!}
+    {!! Form::textarea('description', null, ['class' => 'form-control']) !!}
 </div>
 
 <div class="clearfix"></div>

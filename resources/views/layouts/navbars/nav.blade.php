@@ -2,7 +2,7 @@
     <div class="container-fluid py-1 px-3">
         <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
             <div class="ms-md-auto pe-md-3 d-flex align-items-center">
-           
+
                 <div class="input-group input-group-outline">
                     <label class="form-label">Rechercher...</label>
                     <input type="text" class="form-control" onfocus="focused(this)" onfocusout="defocused(this)">
@@ -10,8 +10,8 @@
             </div>
             <ul class="navbar-nav justify-content-end">
                 <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
-                    <a href="javascript:;" class="nav-link p-0 text-body" id="iconNavbarSidenav">
-                        <div class="sidenav-toggler-inner">
+                    <a href="javascript:;" class="nav-link m-2 text-body" id="iconNavbarSidenav">
+                        <div class="sidenav-toggler-inner text-info">
                             <i class="sidenav-toggler-line"></i>
                             <i class="sidenav-toggler-line"></i>
                             <i class="sidenav-toggler-line"></i>
@@ -22,18 +22,18 @@
                 @auth
                 <li class="nav-item d-flex align-items-center me-1 ml-2">
                     <a class="nav-link font-weight-bold px-0 text-body" href="{{ url('dashboard') }}">
-                        <i class="fa fa-chart-pie opacity-6"></i> Dashboard</a>
+                        <i class="fa fa-chart-pie opacity-6"></i> Dashboard</a>&nbsp;
                 </li>
                 <li class="nav-item d-flex align-items-center me-1">
-                    <a class="nav-link font-weight-bold px-0 text-body" href="/listings" >
+                    <a class="nav-link font-weight-bold px-0 text-body" href="/listings">
                         <i class="fa-solid fa-file-lines"></i>
-                        &nbsp; Annonces
+                         Annonces
                     </a>
                 </li>
 
                 <li class="nav-item d-flex align-items-center">
                     <a class="nav-link font-weight-bold px-0 text-body" href="{{ url('/logout')}}">
-                    &nbsp;  <i class="fa-solid fa-right-from-bracket"></i></a>
+                        &nbsp; <i class="fa-solid fa-right-from-bracket"></i></a>&nbsp;
                 </li>
 
                 <li class="nav-item dropdown pe-2 d-flex align-items-center">
@@ -60,29 +60,6 @@
                             </a>
                         </li>
 
-                    </ul>
-                </li>
-
-                @else
-                <!-- Not Logged in -->
-                <li>
-                    <form class="container-fluid justify-content-start">
-                        <button class="btn bg-gradient-dark me-2" type="button"><a href="/" class="text-white">Véhicules</a></button>
-                        <button class="btn bg-gradient-dark" type="button">Immobilier</button>
-                        <button class="btn bg-gradient-dark" type="button">Electromenager</button>
-                        <button class="btn bg-gradient-dark">Informatique</button>
-                    </form>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Divers
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                        <li><a class="dropdown-item" href="#">Sport</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href="#">Plomberie</a></li>
                     </ul>
                 </li>
                 @endauth
