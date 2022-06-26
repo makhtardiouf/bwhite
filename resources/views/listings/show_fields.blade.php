@@ -1,42 +1,16 @@
-<!-- Titre de l'annonce Field -->
-<div class="form-group">
-    {!! Form::label('title', "") !!}
-    <p>{{ $listing->title }}</p>
+<div class="card mb-3">
+    <img src="{{ asset('storage/'.$listing->image) }}" class="card-img-top  shadow border-radius-xl" alt="{{ $listing->title }}">
+    <div class="card-body">
+        <h5 class="card-title">{{ $listing->category }}: {{ $listing->title }}</h5>
+        <p class="card-text"><textarea id="description">{{ $listing->description }}</textarea></p>
+        <p class="card-text">
+            <small class="text-muted">
+                <ul>
+                    <li>{{ $listing->price }} XOF</li>
+                    <li>{{ $listing->area }}</li>
+                    <li>{{ $listing->updated_at }}</li>
+                </ul>
+            </small>
+        </p>
+    </div>
 </div>
-
-<!-- Category Field -->
-<div class="form-group">
-    {!! Form::label('category', 'Catéorie:') !!}
-    <p>{{ $listing->category }}</p>
-</div>
-
-<!-- Prix Field -->
-<div class="form-group">
-    {!! Form::label('price', 'Prix (XOF):') !!}
-    <p>{{ $listing->price }}</p>
-</div>
-
-<!-- Image Field -->
-<div class="form-group">
-    <p><img class="img-thumbnail border-radius-xl" src="{{ asset('storage/'.$listing->image) }}"></p>
-</div>
-
-<!-- Area Field -->
-<div class="form-group">
-    {!! Form::label('area', 'Zone géographique:') !!}
-    <p>{{ $listing->area }}</p>
-</div>
-
-
-<!-- Description Field -->
-<div class="form-group">
-    {!! Form::label('description', 'Description:') !!}
-    <p><textarea id="description" readonly>{{ $listing->description }}</textarea></p>
-</div>
-
-<!-- Updated At Field -->
-<div class="form-group">
-    {!! Form::label('updated_at', 'Dernière mise à jour:') !!}
-    <p>{{ $listing->updated_at }}</p>
-</div>
-
