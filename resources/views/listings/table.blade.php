@@ -4,7 +4,7 @@
             <tr>
                 <th>Titre</th>
                 <th>Catégorie</th>
-                <th>Image</th>
+                <th>Prix (XOF)</th>
                 <th colspan="3">Action</th>
             </tr>
         </thead>
@@ -13,8 +13,8 @@
             <tr>
                 <td>{{ $listing->title }}</td>
                 <td>{{ $listing->category }}</td>
-                <td><img class="img-fluid" src="{{ url('storage/app/public/'.$listing->image) }}">  </td>
-                
+                <td><span class="text-truncate">{{ $listing->price }}</span></td>
+
                 <td class=" text-center">
                     {!! Form::open(['route' => ['listings.destroy', $listing->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>

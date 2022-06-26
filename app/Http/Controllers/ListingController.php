@@ -18,10 +18,12 @@ class ListingController extends AppBaseController
 {
     /** @var ListingRepository $listingRepository*/
     private $listingRepository;
+    private $uploadPath;
 
     public function __construct(ListingRepository $listingRepo)
     {
         $this->listingRepository = $listingRepo;
+        $this->uploadPath = "storage";
     }
 
     /**
@@ -61,19 +63,21 @@ class ListingController extends AppBaseController
         $input = $request->all();
         Log::debug("Listing record " . json_encode($input) . "\n" . json_encode($request));
 
-        $filename = $request->file('image')->store('public');
+        $image = $request->file('image');
         // "listing" . date('Ymd');
         // $fileInfo = Filepond::field($request->image)
         //     ->moveTo("app/public/" . $filename);
 
-        if(empty($filename)) {
+        if(empty($image)) {
             Log::debug("Failed to obtain uploaded image"); 
         } else {
+            $fname = $image->getClientOriginalName();
+            $path = $image->move($this->uploadPath, $fname);
             
            // $input["image"] = $fileInfo["dirname"]."/".$fileInfo["basename"];
-           $input["image"] = $filename;
+           $input["image"] = $fname;
+           Log::debug("Uploaded file: $fname");
         }
-        Log::debug("Uploaded file: " . $filename);
 
         $listing = $this->listingRepository->create($input);
 

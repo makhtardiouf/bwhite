@@ -28,7 +28,7 @@
 
 <!-- Prix Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('price', 'Prix:') !!}
+    {!! Form::label('price', 'Prix (XOF):') !!}
     {!! Form::number('price', null, ['class' => 'form-control', 'required' => 'true']) !!}
 </div>
 

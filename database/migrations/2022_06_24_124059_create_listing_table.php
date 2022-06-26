@@ -19,10 +19,10 @@ class CreateListingTable extends Migration
         Schema::create('listing', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
-            $table->string('description')->nullable();
+            $table->text('description')->nullable();
             $table->string('category')->default("Divers");
             $table->double('price');
-            $table->string('image')->nullable();
+            $table->text('image')->nullable();
             $table->string('area')->nullable();
             $table->boolean('approved')->default(false);
 
@@ -32,7 +32,6 @@ class CreateListingTable extends Migration
 
             $table->timestamps();
             $table->softDeletes();
-            //$table->foreign('category_id')->references('id')->on('category');
             //$table->foreign('approver_id')->references('id')->on('users');
         });
     }

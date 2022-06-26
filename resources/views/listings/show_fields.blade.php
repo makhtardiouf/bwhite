@@ -18,14 +18,14 @@
 
 <!-- Prix Field -->
 <div class="form-group">
-    {!! Form::label('price', 'Prix:') !!}
+    {!! Form::label('price', 'Prix (XOF):') !!}
     <p>{{ $listing->price }}</p>
 </div>
 
 <!-- Image Field -->
 <div class="form-group">
     {!! Form::label('image', 'Image:') !!}
-    <p>{{ $listing->image }}</p>
+    <p><img class="img-thumbnail border-radius-xl" src="{{ asset('storage/'.$listing->image) }}"></p>
 </div>
 
 <!-- Area Field -->
