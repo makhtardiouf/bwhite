@@ -6,6 +6,7 @@ use App\Http\Controllers\InfoUserController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ResetController;
 use App\Http\Controllers\SessionsController;
+use App\Http\Controllers\ListingController;
 use App\Http\Livewire\Categories;
 
 use Illuminate\Http\Request;
@@ -25,11 +26,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'home'])->name('home');
 
-
-Route::get('/login', function () {
-    return view('session/login-session');
-})->name('login');
-
 Route::get('/packs', function () {
 	return view('packs.list');
 })->name('packs');
@@ -37,6 +33,8 @@ Route::get('/packs', function () {
 Route::get('/sysinfo', function () {
 	return phpinfo();
 });
+
+Route::get('/listings/show/{id}', [ListingController::class, 'show'])->name('listings.show');
 
 Route::group(['middleware' => 'auth'], function () {
 
@@ -80,7 +78,7 @@ Route::group(['middleware' => 'auth'], function () {
 
 
 	Route::resource('categories', App\Http\Controllers\CategoryController::class);
-	Route::resource('listings', App\Http\Controllers\ListingController::class);
+	Route::resource('listings', App\Http\Controllers\ListingController::class);//->except('show');;
 });
 
 
@@ -107,3 +105,6 @@ Route::middleware([
     })->name('dashboard');
 });
 
+Route::get('/login', function () {
+    return view('session/login-session');
+})->name('login');

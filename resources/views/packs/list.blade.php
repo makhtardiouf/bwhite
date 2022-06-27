@@ -3,8 +3,8 @@
 
 <div class="card my-4">
     <div class="card-header p-2 position-relative">
-        <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
-            <h6 class="text-white text-capitalize ps-3">Les Packs Bwhite</h6>
+        <div class="btn btn-outline-dark border-radius-lg pt-2">
+            <h6 class="text-capitalize h6">Les Packs Bwhite</h6>
         </div>
     </div>
 

@@ -29,6 +29,7 @@ Contenu de l'annonce
                                 <div>{!! $listing->description !!}</div>
                                 </p>
 
+                                @auth
                                 <div class="d-flex align-items-center justify-content-between">
                                     <div class="form-group col-sm-6 float-right">
                                         <a href="{{ route('listings.index') }}" class="btn btn-outline-dark btn-sm m-2">Retour</a>
@@ -39,8 +40,8 @@ Contenu de l'annonce
                                             <img alt="Image placeholder" src="../assets/img/team-1.jpg">
                                         </a>
                                     </div>
-
                                 </div>
+                                @endauth
                             </div>
                         </div>
                     </div>

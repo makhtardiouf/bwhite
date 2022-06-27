@@ -5,10 +5,10 @@ Catégories
 @section('content')
 <div class="row mt-4">
     <div class="col-12">
-        <div class="card py-4">
+        <div class="card py-2">
             <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
-                <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
-                    <h6 class="text-white text-capitalize ps-3">Les Catégories</h6>
+                <div class="btn btn-outline-dark border-radius-lg pt-2">
+                    <h6 class="text-capitalize h6">Les Catégories</h6>
                 </div>
             </div>
 
