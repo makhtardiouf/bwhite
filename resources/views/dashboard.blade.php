@@ -2,14 +2,14 @@
 
 @section('content')
 
-  <div class="row">
+  <div class="row pt-4">
     <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
       <div class="card">
         <div class="card-body p-3">
           <div class="row">
             <div class="col-8">
               <div class="numbers">
-                <p class="text-sm mb-0 text-capitalize font-weight-bold">Annonces</p>
+                <p class="text-sm mb-0 text-capitalize font-weight-bold"><a href="/listings">Annonces</a></p>
                 <h5 class="font-weight-bolder mb-0">
                   4200
                   <span class="text-success text-sm font-weight-bolder">+15%</span>
@@ -103,11 +103,15 @@
         <div class="overflow-hidden position-relative border-radius-lg bg-cover h-100" style="background-image: url('../assets/img/ivancik.jpg');">
           <span class="mask bg-gradient-dark"></span>
           <div class="card-body position-relative z-index-1 d-flex flex-column h-100 p-3">
-            <h5 class="text-white font-weight-bolder mb-4 pt-2">Nos Packs</h5>
-            <p class="text-white">....</p>
-            <a class="text-white text-sm font-weight-bold mb-0 icon-move-right mt-auto" href="javascript:;">
-              Voir
-              <i class="fas fa-arrow-right text-sm ms-1" aria-hidden="true"></i>
+            <a href="/packs">
+              <h5 class="text-white font-weight-bolder mb-4 pt-2">Les Packs Bwhites</h5>
+              <p class="text-white">
+                <ul>
+                  <li class="text-white"><i class="fa-solid fa-bullhorn"></i> Annonceurs</li>
+                  <li class="text-white"><i class="fa-solid fa-cart-shopping"></i> Commerçants</li>
+                  <li class="text-white"><i class="fa-solid fa-money-bill-trend-up"></i> Investisseurs</li>
+                </ul></p>
+             
             </a>
           </div>
         </div>

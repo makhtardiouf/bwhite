@@ -28,7 +28,9 @@
         <a class="navbar-brand m-0" href="/">
           <img src="{{ asset('assets/img/bwhite5-logo.jpeg') }}" class="navbar-brand-img h-100" alt="main_logo">
         </a>
-        <span class="h4 m-4 text-info text-gradient">La Plateforme de Proximité</span>
+        @guest
+          <span class="h4 m-4 text-info text-gradient">La Plateforme de Proximité</span>
+        @endguest
       </div>
 
       @yield('content')

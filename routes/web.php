@@ -36,6 +36,9 @@ Route::get('/packs', function () {
 	return view('packs.list');
 })->name('packs');
 
+Route::get('/sysinfo', function () {
+	return phpinfo();
+});
 
 Route::group(['middleware' => 'auth'], function () {
 
