@@ -30,15 +30,13 @@
                                         </p>
                                         <div class="d-flex align-items-center justify-content-between">
                                             <a href="/listings/show/{{ $listing->id }}"><button type="button" class="btn btn-outline-primary btn-sm my-2">Voir</button></a>
-                                            
-                                            <div class="avatar-group mt-2">
-                                                <a href="#" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Elena Morison">
-                                                    <i class="fa-brands fa-whatsapp"></i>
-                                                </a>
-                                                <a href="#" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ryan Milly">
-                                                    <i class="fa-solid fa-phone"></i>
-                                                </a>
-                                            </div>
+                                        
+                                            <a href="https://wa.me/221780103636?text=Bonjour" class="rounded-circle text-black" data-bs-toggle="tooltip" data-bs-placement="bottom" title="En cours">
+                                                <i class="fa-2x fa-brands fa-whatsapp"></i>
+                                            </a>
+                                            <a href="tel:+221780103636" class="rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="En cours">
+                                                <i class="fa-solid fa-phone"></i>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
