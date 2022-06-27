@@ -6,6 +6,7 @@ use App\Http\Requests\CreateListingRequest;
 use App\Http\Requests\UpdateListingRequest;
 use App\Repositories\ListingRepository;
 use App\Http\Controllers\AppBaseController;
+use App\Models\Listing;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -35,7 +36,8 @@ class ListingController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $listings = $this->listingRepository->all();
+        // $listings = $this->listingRepository->all();
+        $listings = Listing::limit(50)->orderBy('id', 'desc')->paginate(10);
 
         return view('listings.index')
             ->with('listings', $listings);

@@ -9,7 +9,44 @@
                 <h6 class="mb-1 text-info text-gradient font-weight-bold">Nouveautés</h6>
                 <p class="text-sm">Immobilier</p>
             </div>
-            
+
+            <div class="card-body p-3">
+                <div class="row">
+                    @foreach($listings as $listing)
+                        @if($listing->image)
+                            <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
+                                <div class="card card-blog card-plain">
+                                    <div class="position-relative">
+                                        <a class="shadow-xl border-radius-xl">
+                                            <img src="{{ asset('storage/'.$listing->image) }}" alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
+                                        </a>
+                                    </div>
+                                    <div class="card-body px-1 pb-0">
+                                        <a href="/">
+                                            <h5>{{ $listing->title }}</h5>
+                                        </a>
+                                        <p class="mb-4 text-sm text-truncate">
+                                        {!! Str::substr($listing->description, 0, 100) !!}
+                                        </p>
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <button type="button" class="btn btn-outline-primary btn-sm my-2"><a href="/listings/{{ $listing->id }}">Voir</a></button>
+                                            <div class="avatar-group mt-2">
+                                                <a href="#" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Elena Morison">
+                                                    <i class="fa-brands fa-whatsapp"></i>
+                                                </a>
+                                                <a href="#" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ryan Milly">
+                                                    <i class="fa-solid fa-phone"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        @endif
+                    @endforeach
+                </div>
+            </div>
+
             <div class="card-body p-3">
                 <div class="row">
                     <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
