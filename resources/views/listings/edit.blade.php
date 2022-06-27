@@ -6,7 +6,7 @@ Edit Listing
 @section('content')
 <section class="section">
     <div class="section-header">
-        <h3 class="page__heading m-0">Editer l'annonce</h3>
+        <h3 class="page__heading m-2">Editer l'annonce</h3>
 
     </div>
     <div class="content">

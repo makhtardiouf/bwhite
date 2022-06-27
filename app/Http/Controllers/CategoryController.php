@@ -58,7 +58,7 @@ class CategoryController extends AppBaseController
 
         $category = $this->categoryRepository->create($input);
 
-        Flash::success('Category saved successfully.');
+        notify()->success('Catégorie sauvegardée');
 
         return redirect(route('categories.index'));
     }
@@ -75,7 +75,7 @@ class CategoryController extends AppBaseController
         $category = $this->categoryRepository->find($id);
 
         if (empty($category)) {
-            Flash::error('Category not found');
+            notify()->error('Catégorie introuvable');
 
             return redirect(route('categories.index'));
         }
@@ -95,7 +95,7 @@ class CategoryController extends AppBaseController
         $category = $this->categoryRepository->find($id);
 
         if (empty($category)) {
-            Flash::error('Category not found');
+            notify()->error('Catégorie introuvable');
 
             return redirect(route('categories.index'));
         }
@@ -116,14 +116,14 @@ class CategoryController extends AppBaseController
         $category = $this->categoryRepository->find($id);
 
         if (empty($category)) {
-            Flash::error('Category not found');
+            notify()->error('Catégorie introuvable');
 
             return redirect(route('categories.index'));
         }
 
         $category = $this->categoryRepository->update($request->all(), $id);
 
-        Flash::success('Category updated successfully.');
+        notify()->success('Catégorie sauvegardée');
 
         return redirect(route('categories.index'));
     }
@@ -142,14 +142,14 @@ class CategoryController extends AppBaseController
         $category = $this->categoryRepository->find($id);
 
         if (empty($category)) {
-            Flash::error('Category not found');
+            notify()->error('Catégorie introuvable');
 
             return redirect(route('categories.index'));
         }
 
         $this->categoryRepository->delete($id);
 
-        Flash::success('Category deleted successfully.');
+        notify()->success('Catégorie supprimée');
 
         return redirect(route('categories.index'));
     }

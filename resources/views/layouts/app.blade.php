@@ -13,7 +13,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
   <link rel="stylesheet" href="{{ asset('assets/css/theme.css') }}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <!-- <link rel="stylesheet" href="{{ asset('assets/css/loopple/loopple.css') }}"> -->
+  @notifyCss
 </head>
 
 <body class="g-sidenav-show bg-gray-100">
@@ -22,6 +22,8 @@
   <div class="main-content position-relative h-100 border-radius-lg" id="panel">
     @include('layouts.navbars.nav')
     <div class="container-fluid pt-3">
+    <x:notify-messages />
+
       <div>
         <a class="navbar-brand m-0" href="/">
           <img src="{{ asset('assets/img/bwhite5-logo.jpeg') }}" class="navbar-brand-img h-100" alt="main_logo">
@@ -38,7 +40,7 @@
   <script src="https://cdn.jsdelivr.net/gh/creativetimofficial/public-assets@master/material-dashboard-2-builder/v3.0.4/assets/js/core/bootstrap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/creativetimofficial/public-assets@master/material-dashboard-2-builder/v3.0.4/assets/js/plugins/chartjs.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/creativetimofficial/public-assets@master/material-dashboard-2-builder/v3.0.4/assets/js/material-dashboard.min.js"></script>
-
+  @notifyJs
   @yield('extrascripts')
 </body>
 

@@ -16,6 +16,7 @@
         "laravel/sanctum": "^2.15",
         "laravel/tinker": "^2.6",
         "livewire/livewire": "^2.5",
+        "mckenziearts/laravel-notify": "^2.3",
         "rahulhaque/laravel-filepond": "^1.8"
     },
     "require-dev": {

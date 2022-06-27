@@ -81,7 +81,7 @@ class ListingController extends AppBaseController
 
         $listing = $this->listingRepository->create($input);
 
-        Flash::success('Listing saved successfully.');
+        notify()->success('Annonce sauvegardée');
 
         return redirect(route('listings.index'));
     }
@@ -98,7 +98,7 @@ class ListingController extends AppBaseController
         $listing = $this->listingRepository->find($id);
 
         if (empty($listing)) {
-            Flash::error('Listing not found');
+            notify()->error('Annonce introuvable');
 
             return redirect(route('listings.index'));
         }
@@ -118,7 +118,7 @@ class ListingController extends AppBaseController
         $listing = $this->listingRepository->find($id);
 
         if (empty($listing)) {
-            Flash::error('Listing not found');
+            notify()->error('Annonce introuvable');
 
             return redirect(route('listings.index'));
         }
@@ -139,14 +139,25 @@ class ListingController extends AppBaseController
         $listing = $this->listingRepository->find($id);
 
         if (empty($listing)) {
-            Flash::error('Listing not found');
+            notify()->error('Annonce introuvable');
 
             return redirect(route('listings.index'));
         }
 
+        $image = $request->file('image');
+        if(empty($image)) {
+            Log::debug("Failed to obtain uploaded image"); 
+        } else {
+            $fname = $image->getClientOriginalName();
+            $path = $image->move($this->uploadPath, $fname);
+            
+           $input["image"] = $fname;
+           Log::debug("Uploaded file: $path");
+        }
+
         $listing = $this->listingRepository->update($request->all(), $id);
 
-        Flash::success('Listing updated successfully.');
+        notify()->success('Annonce sauvegardée');
 
         return redirect(route('listings.index'));
     }
@@ -165,14 +176,14 @@ class ListingController extends AppBaseController
         $listing = $this->listingRepository->find($id);
 
         if (empty($listing)) {
-            Flash::error('Listing not found');
+            notify()->error('Annonce introuvable');
 
             return redirect(route('listings.index'));
         }
 
         $this->listingRepository->delete($id);
 
-        Flash::success('Listing deleted successfully.');
+        notify()->success('Annonce supprimée');
 
         return redirect(route('listings.index'));
     }

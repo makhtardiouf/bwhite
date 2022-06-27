@@ -6,11 +6,11 @@
 <div class="clearfix"></div>
 
 <!-- Icon Field -->
-<div class="form-group col-sm-6">
+<!-- <div class="form-group col-sm-6">
     {!! Form::label('icon', 'Icone:') !!}
     {!! Form::text('icon', null, ['class' => 'form-control']) !!}
 </div>
-<div class="clearfix"></div>
+<div class="clearfix"></div> -->
 
 
 <!-- Priority Field -->
@@ -23,7 +23,7 @@
 <!-- Description Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('description', 'Description:') !!}
-    {!! Form::textarea('description', null, ['class' => 'form-control']) !!}
+    {!! Form::textarea('description', null, ['class' => 'form-control', 'rows' => 4, 'maxlength' => 100]) !!}
 </div>
 
 <!-- Submit Field -->
