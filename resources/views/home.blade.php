@@ -31,10 +31,10 @@
                                         <div class="d-flex align-items-center justify-content-between">
                                             <a href="/listings/show/{{ $listing->id }}"><button type="button" class="btn btn-outline-primary btn-sm my-2">Voir</button></a>
                                         
-                                            <a href="https://wa.me/221780103636?text=Bonjour" class="rounded-circle text-black" data-bs-toggle="tooltip" data-bs-placement="bottom" title="En cours">
+                                            <a href="https://wa.me/221780103636?text=Bonjour" class="rounded-circle text-success" data-bs-toggle="tooltip" data-bs-placement="bottom" title="En cours">
                                                 <i class="fa-2x fa-brands fa-whatsapp"></i>
                                             </a>
-                                            <a href="tel:+221780103636" class="rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="En cours">
+                                            <a href="tel:+221780103636" class="rounded-circle text-dark" data-bs-toggle="tooltip" data-bs-placement="bottom" title="En cours">
                                                 <i class="fa-solid fa-phone"></i>
                                             </a>
                                         </div>

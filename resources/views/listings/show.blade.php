@@ -19,15 +19,25 @@ Contenu de l'annonce
                                 </a>
                             </div>
                             <div class="card-body px-1 pb-0">
-                                <a href="javascript:;">
-                                    <span class="h4">
-                                        <!-- {{ $listing->category }}:-->
-                                        {{ $listing->title }} 
-                                    </span>
-                                </a>
-                                <p class="mb-4">
+                                <span class="h4">
+                                    <!-- {{ $listing->category }}:-->
+                                    {{ $listing->title }}
+                                </span>
+                                <p class="my-2 h6">
+                                    {{ number_format($listing->price, 0, ',', '.') }} XOF
+                                </p>
+                                <p class="m-4">
                                 <div>{!! $listing->description !!}</div>
                                 </p>
+
+                                <div class="d-flex align-items-center pt-4">
+                                    <a href="tel:+221780103636" class="text-dark px-6 m-2" data-bs-toggle="tooltip" data-bs-placement="bottom" title="En cours">
+                                        <i class="fa-2x fa-solid fa-phone"></i>
+                                    </a>
+                                    <a href="https://wa.me/221780103636?text=Bonjour" class="text-success m-2" data-bs-toggle="tooltip" data-bs-placement="bottom" title="En cours">
+                                        <i class="fa-2x fa-brands fa-whatsapp"></i>
+                                    </a>
+                                </div>
 
                                 @auth
                                 <div class="d-flex align-items-center justify-content-between">

@@ -20,7 +20,7 @@
                     <div class="card-body px-1 pb-0">
                         <a href="/">
                             <h5>
-                                <i class="fa-2x fa-solid fa-bullhorn"></i> Pack Annonceurs
+                                <i class="fa-2x fa-solid fa-bullhorn m-3"></i> Pack Annonceurs
                             </h5>
                         </a>
                         <p class="mb-4 text-sm">
@@ -45,7 +45,7 @@
                     <div class="card-body px-1 pb-0">
                         <a href="/">
                             <h5>
-                            <i class="fa-2x fa-solid fa-cart-shopping"></i> Pack Commerçants
+                            <i class="fa-2x fa-solid fa-cart-shopping m-3"></i> Pack Commerçants
                             </h5>
                         </a>
                         <p class="mb-4 text-sm">
@@ -71,7 +71,7 @@
                     <div class="card-body px-1 pb-0">
                         <a href="/">
                             <h5>
-                            <i class="fa-2x fa-solid fa-money-bill-trend-up"></i> Pack Investisseurs
+                            <i class="fa-2x fa-solid fa-money-bill-trend-up m-3"></i> Pack Investisseurs
                             </h5>
                         </a>
                         <p class="mb-4 text-sm">

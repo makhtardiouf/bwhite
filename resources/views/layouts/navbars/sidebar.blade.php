@@ -90,6 +90,13 @@
     <ul class="navbar-nav">
       <!-- Not Logged in -->
       <li class="nav-item">
+        <a class="btn text-black" href="/">
+          <i class="fa-solid fa-house"></i>
+          <span class="nav-link-text ms-1">Accueil</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
         <form class="container-fluid justify-content-start">
           <a href="/"><i class="fa-solid fa-cars text-dark"></i>
           <button class="btn btn-outline text-black text-dark">
