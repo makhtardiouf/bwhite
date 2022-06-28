@@ -90,24 +90,26 @@
     <ul class="navbar-nav">
       <!-- Not Logged in -->
       <li class="nav-item">
-        <a class="btn text-black" href="/">
+        <a class="btn text-info" href="/">
           <i class="fa-solid fa-house"></i>
           <span class="nav-link-text ms-1">Accueil</span>
         </a>
       </li>
 
       <li class="nav-item">
-        <form class="container-fluid justify-content-start">
-          <a href="/"><i class="fa-solid fa-cars text-dark"></i>
-          <button class="btn btn-outline text-black text-dark">
-             Véhicules</a>
-          </button>
-          <button class="btn btn-outline text-black">Immobilier</button>
-          <button class="btn btn-outline text-black">Electromenager</button>
-          <button class="btn btn-outline text-black">Informatique</button>
-        </form>
+        <a class="btn text-dark" href="#"><i class="fa-solid fa-car"></i> Véhicules</a>
       </li>
-      <li class="nav-item dropdown text-black">
+      <li class="nav-item">
+        <a class="btn text-dark" href="#"><i class="fa-solid fa-building"></i> Immobilier</a>
+      </li>
+      <li class="nav-item">
+        <a class="btn text-dark" href="#"><i class="fa-solid fa-kitchen-set"></i> Electromenager</a>
+      </li>
+      <li class="nav-item">
+        <a class="btn text-dark" href="#"><i class="fa-solid fa-laptop-code"></i> Informatique</a>
+      </li>
+
+      <!-- <li class="nav-item dropdown text-black">
         <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
           <span class="text-black">Divers</span>
         </a>
@@ -118,10 +120,10 @@
           </li>
           <li><a class="dropdown-item" href="#">Plomberie</a></li>
         </ul>
-      </li>
+      </li> -->
 
       <li class="nav-item">
-        <a class="btn text-black" href="/packs">
+        <a class="btn text-dark" href="/packs">
           <i class="fa-solid fa-gifts"></i>
           <span class="nav-link-text ms-1">Packs</span>
         </a>

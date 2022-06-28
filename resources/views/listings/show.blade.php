@@ -26,6 +26,10 @@ Contenu de l'annonce
                                 <p class="my-2 h6">
                                     {{ number_format($listing->price, 0, ',', '.') }} XOF
                                 </p>
+                                <p class="my-2 h6">
+                                    {{ Carbon\Carbon::parse($listing->updated_at)->format('F d, Y') }}
+                                </p>
+
                                 <p class="m-4">
                                 <div>{!! $listing->description !!}</div>
                                 </p>
