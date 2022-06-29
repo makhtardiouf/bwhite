@@ -2,6 +2,7 @@
 
 @section('content')
 
+@role('admin')
   <div class="row pt-4">
     <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
       <div class="card">
@@ -70,6 +71,8 @@
       </div>
     </div>
   </div>
+@endrole
+
   <div class="row mt-4">
     <div class="col-lg-7 mb-lg-0 mb-4">
       <div class="card">
@@ -131,6 +134,7 @@
         </div>
       </div>
     </div>
+
     <div class="col-lg-7">
       <div class="card z-index-2">
         <div class="card-header pb-0">
