@@ -51,9 +51,9 @@ Contenu de l'annonce
                                     <div class="row pt-4">
                                         <div class="col text-center">
                                             <a href="{{ route('listings.index') }}" class="btn btn-outline-dark btn-sm m-2">Retour</a>
-                                            <a href="/listings/{{$listing->id}}/edit" class="btn btn-outline-dark btn-sm  m-2">Editer</a>
 
                                             @can('approve listing')
+                                            <a href="/listings/{{$listing->id}}/edit" class="btn btn-outline-dark btn-sm  m-2">Editer</a>
                                                 @if($listing->approved)
                                                 <a href="/listings/{{$listing->id}}/disapprove" class="btn btn-outline-danger btn-sm  m-2" onclick="return confirm('Voulez-vous désapprouver cette annonce ?');">Désapprouver ?</a>
                                                 @else

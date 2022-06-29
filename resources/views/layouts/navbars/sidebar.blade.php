@@ -12,7 +12,13 @@
     <img src="https://demos.creative-tim.com/material-dashboard/assets/img/team-2.jpg" class="avatar avatar-sm">
     <div class="ms-2">
       <h6 class="text-sm text-white mb-0">{{ auth()->user()->name }}</h6>
-      <p class="text-xs text-white opacity-5 mb-0">Superviseur</p>
+      <p class="text-xs text-white opacity-5 mb-0">
+      @can('approve listing')
+        Administrateur
+      @else
+        Client
+      @endcan
+      </p>
     </div>
   </div>
   <hr class="horizontal light mt-0 mb-2">
@@ -27,7 +33,14 @@
 
       <li class="nav-item">
         <a class="nav-link text-white" href="/">
-          <i class="fa-solid fa-house"></i> <span class="nav-link-text ms-1">Site Publique</span>
+          <i class="fa-solid fa-house"></i> <span class="nav-link-text ms-1">
+          @can('approve listing')
+            Site Publique
+          @else
+            Annonces
+          @endcan
+
+          </span>
         </a>
       </li>
 
@@ -37,6 +50,7 @@
         </a>
       </li>
 
+      @can('approve listing')
       <li class="nav-item">
         <a class="nav-link" href="{{ url('categories') }}">
           <i class="fa-solid fa-layer-group"></i>
@@ -50,6 +64,7 @@
           <span class="nav-link-text ms-1">Annonces</span>
         </a>
       </li>
+      @endcan
 
       <li class="nav-item pb-2">
         <a class="nav-link" href="/packs">
@@ -58,12 +73,14 @@
         </a>
       </li>
 
+      @can('approve listing')
       <li class="nav-item pb-2">
         <a class="nav-link" href="#">
           <i class="fa-solid fa-store"></i>
           <span class="nav-link-text ms-1">Boutiques</span>
         </a>
       </li>
+      @endcan
 
       <li class="nav-item pb-2">
         <a class="nav-link" href="/logout">

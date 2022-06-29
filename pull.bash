@@ -11,6 +11,6 @@ php artisan optimize:clear
 php artisan route:clear
 php artisan view:clear  
 
-composer update
+#composer update
 chown -R www-data.www-data /var/www/html/ &
 php artisan up

@@ -12,7 +12,7 @@ class HomeController extends Controller
     {
         $listings = Listing::limit(50)->orderBy('id', 'desc')->paginate(10);
         
-        Log::debug("Retrieved listings: " . json_encode($listings));
+       // Log::debug("Retrieved listings: " . json_encode($listings));
         // return redirect('home');
         return view('home')->with('listings', $listings);
     }

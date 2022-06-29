@@ -39,8 +39,13 @@ class ListingController extends AppBaseController
      */
     public function index(Request $request)
     {
-        // $listings = $this->listingRepository->all();
-        $listings = Listing::where('approved', false)->orderByDesc('id');
+        $user = Auth::user();
+        Log::debug("Getting listings for " . $user->email);
+        if($user->hasRole('admin')) {
+            $listings = $this->listingRepository->all();
+        } else {
+            $listings = Listing::where('approved', true)->orderByDesc('id');
+        }
 
         return view('listings.index')
             ->with('listings', $listings);
