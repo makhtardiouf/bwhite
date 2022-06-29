@@ -27,11 +27,8 @@ class Listing extends Model
     use HasFactory;
 
     public $table = 'listing';
-    
 
     protected $dates = ['deleted_at'];
-
-
 
     public $fillable = [
         'title',

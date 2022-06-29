@@ -29,33 +29,35 @@ Contenu de l'annonce
                                 <p class="my-2 h6">
                                     {{ Carbon\Carbon::parse($listing->updated_at)->format('F d, Y') }}
                                 </p>
-
+                                <p class="my-2">
+                                    Statut: {!! $listing->approved ? '<i class="fa-solid fa-check-double text-dark"></i>' : '<i class="fa-solid fa-circle-pause text-danger"></i>' !!}
+                                </p>
                                 <p class="m-4">
                                 <div>{!! $listing->description !!}</div>
                                 </p>
 
-                                <div class="d-flex align-items-center pt-4">
-                                    <a href="tel:+221780103636" class="text-dark px-6 m-2" data-bs-toggle="tooltip" data-bs-placement="bottom" title="En cours">
-                                        <i class="fa-2x fa-solid fa-phone"></i>
-                                    </a>
-                                    <a href="https://wa.me/221780103636?text=Bonjour" class="text-success m-2" data-bs-toggle="tooltip" data-bs-placement="bottom" title="En cours">
-                                        <i class="fa-2x fa-brands fa-whatsapp"></i>
-                                    </a>
+                                <div class="pt-4">
+                                    <div class="row">
+                                        <div class="text-center">
+                                            <a href="tel:+221780103636" class="text-dark m-2" data-bs-toggle="tooltip" data-bs-placement="bottom" title="En cours">
+                                                <i class="fa-2x fa-solid fa-phone"></i>
+                                            </a>
+                                            <a href="https://wa.me/221780103636?text=Bonjour" class="text-success m-2" data-bs-toggle="tooltip" data-bs-placement="bottom" title="En cours">
+                                                <i class="fa-2x fa-brands fa-whatsapp"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    @auth
+                                    <div class="row pt-4">
+                                        <div class="col text-center">
+                                            <a href="{{ route('listings.index') }}" class="btn btn-outline-dark btn-sm m-2">Retour</a>
+                                            <a href="/listings/{{$listing->id}}/edit" class="btn btn-outline-dark btn-sm  m-2">Editer</a>
+                                            <a href="#" class="btn btn-outline-success btn-sm  m-2">Approuver ?</a>
+                                        </div>
+                                    </div>
+                                    @endauth
                                 </div>
 
-                                @auth
-                                <div class="d-flex align-items-center justify-content-between">
-                                    <div class="form-group col-sm-6 float-right">
-                                        <a href="{{ route('listings.index') }}" class="btn btn-outline-dark btn-sm m-2">Retour</a>
-                                        <a href="/listings/{{$listing->id}}/edit" class="btn btn-outline-primary btn-sm mb-0">Editer</a>
-                                    </div>
-                                    <div class="avatar-group mt-2">
-                                        <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Elena Morison">
-                                            <img alt="Image placeholder" src="../assets/img/team-1.jpg">
-                                        </a>
-                                    </div>
-                                </div>
-                                @endauth
                             </div>
                         </div>
                     </div>
