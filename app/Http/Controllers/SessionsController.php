@@ -23,6 +23,8 @@ class SessionsController extends Controller
         if(Auth::attempt($attributes))
         {
             session()->regenerate();
+            $user = Auth::user();
+            $user->assignRole('client');
             return redirect('dashboard')->with(['success'=>'You are logged in.']);
         }
         else{

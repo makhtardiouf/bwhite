@@ -37,7 +37,8 @@ class Listing extends Model
         'price',
         'image',
         'area',
-        'category_id'
+        'category_id',
+        'user_id'
     ];
 
     /**

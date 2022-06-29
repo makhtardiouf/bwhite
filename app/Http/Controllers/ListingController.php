@@ -11,6 +11,9 @@ use App\Models\Listing;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Auth;
+//use Illuminate\Support\Facades\Gate;
+
 use RahulHaque\Filepond\Facades\Filepond;
 use Flash;
 use Response;
@@ -37,7 +40,7 @@ class ListingController extends AppBaseController
     public function index(Request $request)
     {
         // $listings = $this->listingRepository->all();
-        $listings = Listing::limit(50)->orderBy('id', 'desc')->paginate(10);
+        $listings = Listing::where('approved', false)->orderByDesc('id');
 
         return view('listings.index')
             ->with('listings', $listings);
@@ -63,7 +66,7 @@ class ListingController extends AppBaseController
     public function store(CreateListingRequest $request)
     {
         $input = $request->all();
-        Log::debug("Listing record " . json_encode($input) . "\n" . json_encode($request));
+        Log::debug("Listing record " . json_encode($input));
 
         $image = $request->file('image');
         // "listing" . date('Ymd');
@@ -163,6 +166,54 @@ class ListingController extends AppBaseController
 
         return redirect(route('listings.index'));
     }
+
+    /**
+     * Appove listing by admin
+     */
+    public function approve($id) {
+        // Check if user is admin
+
+        $listing = $this->listingRepository->find($id);
+
+        if (empty($listing)) {
+            notify()->error('Annonce introuvable');
+
+            return redirect(route('listings.index'));
+        }
+        $user = Auth::user();
+        $listing->approved = true;
+        $listing->approver_id = $user->id;
+        $listing->save();
+        notify()->success('Annonce approuvée');
+        Log::debug($user->name . " approved listing $id");
+
+        return view('listings.show')->with('listing', $listing);
+    }
+
+        /**
+     * Appove listing by admin
+     */
+    public function disapprove($id) {
+        // Check if user is admin
+
+        $listing = $this->listingRepository->find($id);
+
+        if (empty($listing)) {
+            notify()->error('Annonce introuvable');
+
+            return redirect(route('listings.index'));
+        }
+        $user = Auth::user();
+        $listing->approved = false;
+        $listing->approver_id = $user->id;
+        $listing->save();
+        notify()->success('Annonce désaprouvée');
+        Log::debug($user->name . " disapproved listing $id");
+
+        return view('listings.show')->with('listing', $listing);
+    }
+
+
 
     /**
      * Remove the specified Listing from storage.

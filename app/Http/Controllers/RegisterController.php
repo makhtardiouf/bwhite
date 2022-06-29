@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Validation\Rule;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Cartalyst\Sentinel\Laravel\Facades\Sentinel;
 
 class RegisterController extends Controller
 {
@@ -25,8 +26,10 @@ class RegisterController extends Controller
         ]);
         $attributes['password'] = bcrypt($attributes['password'] );
 
-        session()->flash('success', 'Votre compte Bwhite a été créé');
+       // $user = Sentinel::registerAndActivate(request()->all());
+        notify()->success('Votre compte Bwhite a été créé');
         $user = User::create($attributes);
+        $user->assignRole('client');
         Auth::login($user); 
         return redirect('/dashboard');
     }

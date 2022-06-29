@@ -78,9 +78,14 @@ Route::group(['middleware' => 'auth'], function () {
 
 
 	Route::resource('categories', App\Http\Controllers\CategoryController::class);
-	Route::resource('listings', App\Http\Controllers\ListingController::class);//->except('show');;
+	Route::resource('listings', App\Http\Controllers\ListingController::class);
 });
 
+Route::group(['middleware' => ['can:approve listing', 'can:disapprove listing']], function () {
+
+	Route::get('/listings/{id}/approve', [ListingController::class, 'approve'])->name('listings.approve');
+	Route::get('/listings/{id}/disapprove', [ListingController::class, 'disapprove'])->name('listings.disapprove');
+});
 
 
 Route::group(['middleware' => 'guest'], function () {

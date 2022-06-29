@@ -30,7 +30,7 @@ Contenu de l'annonce
                                     {{ Carbon\Carbon::parse($listing->updated_at)->format('F d, Y') }}
                                 </p>
                                 <p class="my-2">
-                                    Statut: {!! $listing->approved ? '<i class="fa-solid fa-check-double text-dark"></i>' : '<i class="fa-solid fa-circle-pause text-danger"></i>' !!}
+                                    Statut: {!! $listing->approved ? '<i class="fa-solid fa-check-double text-success"></i>' : '<i class="fa-solid fa-circle-pause text-danger"></i>' !!}
                                 </p>
                                 <p class="m-4">
                                 <div>{!! $listing->description !!}</div>
@@ -52,7 +52,14 @@ Contenu de l'annonce
                                         <div class="col text-center">
                                             <a href="{{ route('listings.index') }}" class="btn btn-outline-dark btn-sm m-2">Retour</a>
                                             <a href="/listings/{{$listing->id}}/edit" class="btn btn-outline-dark btn-sm  m-2">Editer</a>
-                                            <a href="#" class="btn btn-outline-success btn-sm  m-2">Approuver ?</a>
+
+                                            @can('approve listing')
+                                                @if($listing->approved)
+                                                <a href="/listings/{{$listing->id}}/disapprove" class="btn btn-outline-danger btn-sm  m-2" onclick="return confirm('Voulez-vous désapprouver cette annonce ?');">Désapprouver ?</a>
+                                                @else
+                                                <a href="/listings/{{$listing->id}}/approve" class="btn btn-outline-success btn-sm  m-2" onclick="return confirm('Voulez-vous approuver cette annonce ?');">Approuver ?</a>
+                                                @endif
+                                            @endcan
                                         </div>
                                     </div>
                                     @endauth
