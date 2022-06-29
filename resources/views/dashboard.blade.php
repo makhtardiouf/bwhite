@@ -71,6 +71,8 @@
       </div>
     </div>
   </div>
+  @else
+  <a href="{{ route('listings.create')}}" class="btn bg-gradient-dark">Ajouter une annonce</a>
 @endrole
 
   <div class="row mt-4">
