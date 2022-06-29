@@ -76,3 +76,7 @@
         </div>
     </div>
 </nav>
+
+<div class="float-end p-3">
+    <a href="{{ route('listings.annonceStep1')}}" class="btn bg-gradient-dark">Ajouter une annonce</a>
+</div>

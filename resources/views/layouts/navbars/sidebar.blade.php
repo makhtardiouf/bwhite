@@ -58,15 +58,16 @@
         </a>
       </li>
 
-      <li class="nav-item pb-2">
+      <li class="nav-item pb-1">
         <a class="nav-link" href="/listings">
           <i class="fa-solid fa-file-lines"></i>
           <span class="nav-link-text ms-1">Annonces</span>
         </a>
       </li>
+      
       @endcan
 
-      <li class="nav-item pb-2">
+      <li class="nav-item pb-1">
         <a class="nav-link" href="/packs">
           <i class="fa-solid fa-gifts"></i>
           <span class="nav-link-text ms-1">Packs</span>
@@ -74,7 +75,7 @@
       </li>
 
       @can('approve listing')
-      <li class="nav-item pb-2">
+      <li class="nav-item pb-1">
         <a class="nav-link" href="#">
           <i class="fa-solid fa-store"></i>
           <span class="nav-link-text ms-1">Boutiques</span>
@@ -82,22 +83,21 @@
       </li>
       @endcan
 
-      <li class="nav-item pb-2">
+      <li class="nav-item pb-1">
         <a class="nav-link" href="/logout">
           <i class="fa-solid fa-door-open"></i>
           <span class="nav-link-text ms-1">Déconnexion</span>
         </a>
       </li>
-
     </ul>
   </div>
 
 </aside>
 
 @else
-<aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start" id="sidenav-main">
+<aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl mt-3 fixed-start" id="sidenav-main">
   <div class="sidenav-header">
-    <i class="fas fa-times p-3 cursor-pointer text-white opacity-5 position-absolute end-0 top-0 d-none d-xl-none" id="iconSidenav"></i>
+    <i class="fas fa-times p-1 cursor-pointer text-white opacity-5 position-absolute end-0 top-0 d-none d-xl-none" id="iconSidenav"></i>
     <a class="navbar-brand m-0" href="/">
       <img src="{{ asset('assets/img/bwhite5-logo.jpeg') }}" class="navbar-brand-img h-100" alt="main_logo">
     </a>

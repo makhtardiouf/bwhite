@@ -12,7 +12,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Auth;
-//use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Session;
 
 use RahulHaque\Filepond\Facades\Filepond;
 use Flash;
@@ -41,7 +41,7 @@ class ListingController extends AppBaseController
     {
         $user = Auth::user();
         Log::debug("Getting listings for " . $user->email);
-        if($user->hasRole('admin')) {
+        if ($user->hasRole('admin')) {
             $listings = $this->listingRepository->all();
         } else {
             $listings = Listing::where('approved', true)->orderByDesc('id');
@@ -78,23 +78,69 @@ class ListingController extends AppBaseController
         // $fileInfo = Filepond::field($request->image)
         //     ->moveTo("app/public/" . $filename);
 
-        if(empty($image)) {
-            Log::debug("Failed to obtain uploaded image"); 
+        if (empty($image)) {
+            Log::debug("Failed to obtain uploaded image");
         } else {
             $fname = $image->getClientOriginalName();
             $path = $image->move($this->uploadPath, $fname);
-            
-           // $input["image"] = $fileInfo["dirname"]."/".$fileInfo["basename"];
-           $input["image"] = $fname;
-           Log::debug("Uploaded file: $fname");
-        }
 
+            // $input["image"] = $fileInfo["dirname"]."/".$fileInfo["basename"];
+            $input["image"] = $fname;
+            Log::debug("Uploaded file: $fname");
+        }
+        $input["user_id"] = Auth::user()->id;
         $listing = $this->listingRepository->create($input);
 
         notify()->success('Annonce sauvegardée');
 
         return redirect(route('listings.index'));
     }
+
+    /**
+     * Public listing input
+     */
+    public function annonceStep1(Request $request)
+    {
+        if ($request->isMethod('post')) {
+            $input = $request->all();
+            Log::debug("Public listing page 1:" . json_encode($input));
+
+            $image = $request->file('image');
+            if (empty($image)) {
+                Log::debug("Failed to obtain uploaded image");
+            } else {
+                $fname = $image->getClientOriginalName();
+                $path = $image->move($this->uploadPath, $fname);
+
+                $input["image"] = $fname;
+                Log::debug("Uploaded file: $fname");
+            }
+            Session::put('listingStep1', $input);
+            return redirect()->to('/listings/step2');
+        }
+        return view('listings.step1');
+    }
+
+
+    /**
+     * Save public Listing
+     */
+    public function annonceStep2(CreateListingRequest $request)
+    {
+        if ($request->isMethod('post')) {
+            $data = Session::pull('listingStep1', []);
+            $data = array_merge($data, $request->all());
+            Log::debug("Listing step2:\n " . json_encode($data));
+
+            $listing = $this->listingRepository->create($data);
+
+            notify()->success('Annonce sauvegardée');
+
+            return redirect(route('listings.index'));
+        }
+        return view('listings.step2');
+    }
+
 
     /**
      * Display the specified Listing.
@@ -155,14 +201,14 @@ class ListingController extends AppBaseController
         }
 
         $image = $request->file('image');
-        if(empty($image)) {
-            Log::debug("Failed to obtain uploaded image"); 
+        if (empty($image)) {
+            Log::debug("Failed to obtain uploaded image");
         } else {
             $fname = $image->getClientOriginalName();
             $path = $image->move($this->uploadPath, $fname);
-            
-           $input["image"] = $fname;
-           Log::debug("Uploaded file: $path");
+
+            $input["image"] = $fname;
+            Log::debug("Uploaded file: $path");
         }
 
         $listing = $this->listingRepository->update($request->all(), $id);
@@ -175,7 +221,8 @@ class ListingController extends AppBaseController
     /**
      * Appove listing by admin
      */
-    public function approve($id) {
+    public function approve($id)
+    {
         // Check if user is admin
 
         $listing = $this->listingRepository->find($id);
@@ -195,10 +242,11 @@ class ListingController extends AppBaseController
         return view('listings.show')->with('listing', $listing);
     }
 
-        /**
+    /**
      * Appove listing by admin
      */
-    public function disapprove($id) {
+    public function disapprove($id)
+    {
         // Check if user is admin
 
         $listing = $this->listingRepository->find($id);

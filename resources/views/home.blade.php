@@ -143,7 +143,7 @@
                             <div class="card-body d-flex flex-column justify-content-center text-center">
                                 <a href="/">
                                     <i class="fa fa-plus text-secondary mb-3"></i>
-                                    <h5 class="text-success text-gradient font-weight-bold"> Ajoutez une annonce </h5>
+                                    <h5 class="text-success text-gradient font-weight-bold"><a href="{{ route('listings.create')}}">Ajoutez une annonce</a></h5>
                                 </a>
                             </div>
                         </div>
@@ -259,7 +259,7 @@
                             <div class="card-body d-flex flex-column justify-content-center text-center">
                                 <a href="/">
                                     <i class="fa fa-plus text-secondary mb-3"></i>
-                                    <h5 class=" text-success text-gradient font-weight-bold"> Ajoutez une annonce </h5>
+                                    <h5 class=" text-success text-gradient font-weight-bold"><a href="{{ route('listings.create')}}">Ajoutez une annonce</a>
                                 </a>
                             </div>
                         </div>

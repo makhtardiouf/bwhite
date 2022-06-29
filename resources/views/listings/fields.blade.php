@@ -44,5 +44,10 @@
 <!-- Submit Field -->
 <div class="form-group col-sm-6 float-right">
     <a href="{{ route('listings.index') }}" class="btn btn-light m-2">Annuler</a>
-    {!! Form::submit('Enregistrer', ['class' => 'btn bg-gradient-dark  m-2']) !!}
+
+    @if(Route::currentRouteName() == 'listings.annonceStep1')
+        {!! Form::submit('Suivant', ['class' => 'btn bg-gradient-dark  m-2']) !!}
+    @else
+        {!! Form::submit('Enregistrer', ['class' => 'btn bg-gradient-dark  m-2']) !!}
+    @endif
 </div>

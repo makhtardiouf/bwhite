@@ -35,6 +35,9 @@ Route::get('/sysinfo', function () {
 });
 
 Route::get('/listings/show/{id}', [ListingController::class, 'show'])->name('listings.show');
+Route::any('/listings/step1', [ListingController::class, 'annonceStep1'])->name('listings.annonceStep1');
+Route::any('/listings/step2', [ListingController::class, 'annonceStep2'])->name('listings.annonceStep2');
+
 
 Route::group(['middleware' => 'auth'], function () {
 
@@ -100,15 +103,15 @@ Route::group(['middleware' => 'guest'], function () {
 
 });
 
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified'
-])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
-});
+// Route::middleware([
+//     'auth:sanctum',
+//     config('jetstream.auth_session'),
+//     'verified'
+// ])->group(function () {
+//     Route::get('/dashboard', function () {
+//         return view('dashboard');
+//     })->name('dashboard');
+// });
 
 Route::get('/login', function () {
     return view('session/login-session');

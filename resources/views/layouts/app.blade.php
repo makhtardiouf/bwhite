@@ -35,6 +35,7 @@
         </a>
         @guest
           <span class="h4 m-4 text-info text-gradient">La Plateforme de Proximité</span>
+
         @endguest
       </div>
 

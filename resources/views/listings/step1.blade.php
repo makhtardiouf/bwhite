@@ -11,17 +11,14 @@ Create Listing
     </div>
 
     <div class="content">
-        @include('adminlte-templates::common.errors')
         <div class="section-body">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-body ">
-                            @auth
-                                {!! Form::open(['route' => 'listings.store', 'files' => true, 'role' => 'form text-left']) !!}
-                            else
-                                {!! Form::open(['route' => 'listings.publicInput', 'files' => true, 'role' => 'form text-left']) !!}
-                            @endauth
+                            <div class="col-6">@include('adminlte-templates::common.errors')</div>
+                            <br>
+                            {!! Form::open(['route' => 'listings.annonceStep2', 'files' => true, 'role' => 'form text-left']) !!}
                             <div class="row">
                                 @include('listings.fields')
                             </div>

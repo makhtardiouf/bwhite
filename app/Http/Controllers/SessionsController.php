@@ -24,11 +24,11 @@ class SessionsController extends Controller
         {
             session()->regenerate();
             //$user = Auth::user();
-            return redirect('dashboard')->with(['success'=>'You are logged in.']);
+            return redirect('dashboard')->with(['success'=>'Bienvenue.']);
         }
         else{
 
-            return back()->withErrors(['email'=>'Email or password invalid.']);
+            return back()->withErrors(['email'=>'Email ou mot de passe invalide.']);
         }
     }
     
@@ -37,6 +37,6 @@ class SessionsController extends Controller
 
         Auth::logout();
 
-        return redirect('/')->with(['success'=>'You\'ve been logged out.']);
+        return redirect('/')->with(['success'=>'Au revoir']);
     }
 }
