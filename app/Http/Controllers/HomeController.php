@@ -12,7 +12,7 @@ class HomeController extends Controller
     public function home()
     {
         $listings = Listing::where('approved', true)->orderByDesc('id')->get();
-        Log::debug("Getting approved " . count($listings) . "listings for anonymous...");
+        Log::debug("Getting approved " . count($listings) . " listings for anonymous...");
 
         return view('home')->with('listings', $listings);
     }
