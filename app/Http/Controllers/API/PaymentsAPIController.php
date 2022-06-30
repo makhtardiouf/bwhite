@@ -20,6 +20,8 @@ class PaymentsAPIController extends AppBaseController
 {
     /** @var  PaymentsRepository */
     private $paymentsRepository;
+    // Dev 
+    private $devApiKey = "wave_sn_prod_W4FEbMakj9EyNGc-5C3uazvHM4Dhl-mnLA2UZny6qwWZFhBojFQfWFbYbA5JnW8-Nly1ALIGZ3KiDu-s-X1tnk0p6lJfpeH2rw";
 
     public function __construct(PaymentsRepository $paymentsRepo)
     {

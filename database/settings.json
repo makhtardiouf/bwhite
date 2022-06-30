@@ -1,0 +1,46 @@
+[
+    {
+        "name": "id",
+        "dbType": "increments",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": true,
+        "inForm": false,
+        "inIndex": false,
+        "inView": false
+    },
+    {
+        "name": "partner",
+        "dbType": "text",
+        "htmlType": "",
+        "validations": "required",
+        "searchable": true,
+        "fillable": true,
+        "inForm": true,
+        "inIndex": true,
+        "inView": true
+    },
+    {
+        "name": "key",
+        "dbType": "text",
+        "htmlType": "",
+        "validations": "required",
+        "searchable": true,
+        "fillable": true,
+        "inForm": true,
+        "inIndex": true,
+        "inView": true
+    },{
+        "name": "value",
+        "dbType": "text",
+        "htmlType": "",
+        "validations": "required",
+        "searchable": true,
+        "fillable": true,
+        "inForm": true,
+        "inIndex": true,
+        "inView": true
+    }
+]

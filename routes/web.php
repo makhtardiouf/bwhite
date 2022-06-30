@@ -85,6 +85,7 @@ Route::group(['middleware' => 'auth'], function () {
 
 Route::group(['middleware' => ['can:approve listing', 'can:disapprove listing']], function () {
 	Route::resource('payments', App\Http\Controllers\PaymentsController::class);
+	Route::resource('settings', App\Http\Controllers\SettingsController::class);
 
 	Route::get('/listings/{id}/approve', [ListingController::class, 'approve'])->name('listings.approve');
 	Route::get('/listings/{id}/disapprove', [ListingController::class, 'disapprove'])->name('listings.disapprove');
@@ -116,3 +117,4 @@ Route::group(['middleware' => 'guest'], function () {
 Route::get('/login', function () {
     return view('session/login-session');
 })->name('login');
+
