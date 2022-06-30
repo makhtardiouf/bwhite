@@ -12,7 +12,7 @@
             </div>
         </div>
         <div class="content">
-            @include('stisla-templates::common.errors')
+            @include('adminlte-templates::common.errors')
             <div class="section-body">
                <div class="row">
                    <div class="col-lg-12">

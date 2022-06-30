@@ -80,11 +80,3 @@
 <div class="float-end p-3">
     <a href="{{ route('listings.annonceStep1')}}" class="btn bg-gradient-dark">Ajouter une annonce</a>
 </div>
-
-<li class="nav-item">
-    <a href="{{ route('settings.index') }}" class="nav-link {{ Request::is('settings*') ? 'active' : '' }}">
-        <i class="nav-icon fas fa-home"></i>
-        <p>Settings</p>
-    </a>
-</li>
-

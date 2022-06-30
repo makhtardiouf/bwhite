@@ -19,6 +19,7 @@ class CreateSettingsTable extends Migration
             $table->text('partner');
             $table->text('key');
             $table->text('value');
+            $table->timestamps();
             $table->softDeletes();
         });
     }
