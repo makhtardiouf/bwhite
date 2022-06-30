@@ -24,7 +24,7 @@ Contenu de l'annonce
                                     {{ $listing->title }}
                                 </span>
                                 <p class="my-2">
-                                    <a href="tel:+{{ $listing->phone }}" class="text-dark m-2">
+                                    <a href="tel:{{ $listing->phone }}" class="text-dark m-2">
                                       <i class="fa-solid fa-phone"></i> &nbsp; {{ $listing->phone }}
                                     </a>
                                 </p>
@@ -46,7 +46,7 @@ Contenu de l'annonce
                                 <div class="pt-4">
                                     <div class="row">
                                         <div class="text-center">
-                                            <a href="tel:+{{ $listing->phone }}" class="text-dark m-2">
+                                            <a href="tel:{{ $listing->phone }}" class="text-dark m-2">
                                                 <i class="fa-2x fa-solid fa-phone"></i>
                                             </a>
                                             <a href="https://wa.me/{{ $listing->phone }}?text=Bonjour" class="text-success m-2">
