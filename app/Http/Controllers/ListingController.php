@@ -40,18 +40,19 @@ class ListingController extends AppBaseController
     public function index(Request $request)
     {
         $listings = array();
+
         if (Auth::check()) {
             $user = Auth::user();
-
             if ($user->hasRole('admin') || $user->hasRole('staff')) {
                 $listings = Listing::orderByDesc('id')->get();
-
+                
             } else {
-                //  Listing::where('user_id', $user->id)->orderByDesc('id');
-                $listings = Listing::where('user_id', $user->id)->orderByDesc('id')->get();
+                //  $listings = Listing::where('user_id', $user->id)->orderByDesc('id')->get();
+                $listings = Listing::where('approved', true)->orderByDesc('id')->get();
             }
         } else {
             $listings = Listing::where('approved', true)->orderByDesc('id')->get();
+            Log::debug("Getting approved " . count($listings) . "listings for anonymous...");
         }
 
         return view('listings.index')
@@ -110,7 +111,7 @@ class ListingController extends AppBaseController
      */
     public function annonceStep1(Request $request)
     {
-       // $request->flash();
+        // $request->flash();
         return view('listings.step1');
     }
 
@@ -132,7 +133,7 @@ class ListingController extends AppBaseController
         }
         $request->flash();
         Log::debug("Listing step2:\n " . json_encode($request));
-        
+
         return view('listings.step2');
     }
 

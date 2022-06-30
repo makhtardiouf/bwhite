@@ -14,9 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::table('listing', function (Blueprint $table) {
-            $table->string('name');
-            $table->string('adresse');
-            $table->string('phone');
+            $table->string('name')->after('area')->nullable();
+            $table->string('adresse')->after('name')->nullable();
+            $table->string('phone')->after('adresse')->nullable();
         });
     }
 
@@ -27,7 +27,7 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
+        Schema::table('listing', function (Blueprint $table) {
             $table->dropColumn(array_merge([
                 'name',
                 'adresse',

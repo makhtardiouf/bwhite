@@ -11,20 +11,8 @@ class HomeController extends Controller
 {
     public function home()
     {
-        $listings = array();
-        if (Auth::check()) {
-            $user = Auth::user();
-
-            if ($user->hasRole('admin') || $user->hasRole('staff')) {
-                $listings = Listing::orderByDesc('id')->get();
-
-            } else {
-                //  Listing::where('user_id', $user->id)->orderByDesc('id');
-                $listings = Listing::where('user_id', $user->id)->orderByDesc('id')->get();
-            }
-        } else {
-            $listings = Listing::where('approved', true)->orderByDesc('id')->get();
-        }
+        $listings = Listing::where('approved', true)->orderByDesc('id')->get();
+        Log::debug("Getting approved " . count($listings) . "listings for anonymous...");
 
         return view('home')->with('listings', $listings);
     }
