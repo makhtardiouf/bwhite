@@ -116,3 +116,6 @@ Route::group(['middleware' => 'guest'], function () {
 Route::get('/login', function () {
     return view('session/login-session');
 })->name('login');
+
+
+Route::resource('payments', App\Http\Controllers\PaymentsController::class);

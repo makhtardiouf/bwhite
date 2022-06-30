@@ -1,0 +1,18 @@
+{
+    "id": "EV_QvEZuDSQbLdI",
+    "type": "checkout.session.completed",
+    "data": {
+      "id": "CXUOuOdDgAg",
+      "amount": "1000",
+      "checkout_status": "complete",
+      "client_reference": "1f31dfd7-aec8-4adf-84ff-4a9c1981be2a",
+      "currency": "XOF",
+      "error_url": "https://example.com/error",
+      "payment_status": "succeeded",
+      "success_url": "https://example.com/success",
+      "wave_launch_url": "https://pay.wave.com/c/CXUOuOdDgAg",
+      "when_completed": "2021-12-08T10:15:32Z",
+      "when_created": "2021-12-08T10:13:04Z",
+      "when_expires": "2021-12-09T10:13:04Z"
+    }
+  }
