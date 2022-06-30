@@ -18,7 +18,7 @@
                         </a>
                     </div>
                     <div class="card-body px-1 pb-0">
-                        <a href="/">
+                        <a href="/packs/annonceur">
                             <h5>
                                 <i class="fa-2x fa-solid fa-bullhorn m-3"></i> Pack Annonceurs
                             </h5>
@@ -29,7 +29,9 @@
                             Ce pack est réservé aux agences immobilières, aux gérants de parking et aux particuliers voulant écouler un objet.</p>
 
                         <div class="d-flex align-items-center justify-content-between">
-                            <button type="button" class="btn btn-outline-primary btn-sm mb-0">Souscrire</button>
+                            <a href="/packs/annonceur">
+                                <button type="button" class="btn btn-outline-primary btn-sm mb-0">Souscrire</button>
+                            </a>
                         </div>
                     </div>
                 </div>

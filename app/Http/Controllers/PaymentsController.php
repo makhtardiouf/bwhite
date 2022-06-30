@@ -14,7 +14,8 @@ class PaymentsController extends AppBaseController
 {
     /** @var PaymentsRepository $paymentsRepository*/
     private $paymentsRepository;
-
+    private $baseurl = "https://api.wave.com";
+    
     public function __construct(PaymentsRepository $paymentsRepo)
     {
         $this->paymentsRepository = $paymentsRepo;

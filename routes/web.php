@@ -30,6 +30,10 @@ Route::get('/packs', function () {
 	return view('packs.list');
 })->name('packs');
 
+Route::get('/packs/annonceur', function () {
+	return view('packs.annonceur');
+})->name('packs-annoncerur');
+
 Route::get('/sysinfo', function () {
 	return phpinfo();
 });
