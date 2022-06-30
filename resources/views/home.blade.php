@@ -30,10 +30,10 @@
                                     <div class="d-flex align-items-center justify-content-between">
                                         <a href="/listings/show/{{ $listing->id }}"><button type="button" class="btn btn-outline-primary btn-sm my-2">Voir</button></a>
 
-                                        <a href="https://wa.me/221780103636?text=Bonjour" class="rounded-circle text-success" data-bs-toggle="tooltip" data-bs-placement="bottom" title="En cours">
+                                        <a href="https://wa.me/{{ $listing->phone }}?text=Bonjour" class="rounded-circle text-success" data-bs-toggle="tooltip" data-bs-placement="bottom">
                                             <i class="fa-2x fa-brands fa-whatsapp"></i>
                                         </a>
-                                        <a href="tel:+221780103636" class="rounded-circle text-dark" data-bs-toggle="tooltip" data-bs-placement="bottom" title="En cours">
+                                        <a href="tel:+{{ $listing->phone }}" class="rounded-circle text-dark" data-bs-toggle="tooltip" data-bs-placement="bottom">
                                             <i class="fa-solid fa-phone"></i>
                                         </a>
                                     </div>
@@ -142,16 +142,6 @@
                                         </a>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
-                        <div class="card h-100 card-plain border">
-                            <div class="card-body d-flex flex-column justify-content-center text-center">
-                                <a href="/">
-                                    <i class="fa fa-plus text-secondary mb-3"></i>
-                                    <h5 class="text-success text-gradient font-weight-bold"><a href="{{ route('listings.create')}}">Ajoutez une annonce</a></h5>
-                                </a>
                             </div>
                         </div>
                     </div>

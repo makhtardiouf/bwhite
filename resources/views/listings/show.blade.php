@@ -23,12 +23,19 @@ Contenu de l'annonce
                                     <!-- {{ $listing->category }}:-->
                                     {{ $listing->title }}
                                 </span>
-                                <p class="my-2 h6">
-                                    {{ number_format($listing->price, 0, ',', '.') }} XOF
+                                <p class="my-2">
+                                    <a href="tel:+{{ $listing->phone }}" class="text-dark m-2">
+                                      <i class="fa-solid fa-phone"></i> &nbsp; {{ $listing->phone }}
+                                    </a>
                                 </p>
                                 <p class="my-2 h6">
-                                    {{ Carbon\Carbon::parse($listing->updated_at)->format('F d, Y') }}
+                                   Prix: {{ number_format($listing->price, 0, ',', '.') }} XOF
                                 </p>
+
+                                <p class="my-2 h6">
+                                   Publication: {{ Carbon\Carbon::parse($listing->updated_at)->format('F d, Y') }}
+                                </p>
+
                                 <p class="my-2">
                                     Statut: {!! $listing->approved ? '<i class="fa-solid fa-check-double text-success"></i>' : '<i class="fa-solid fa-circle-pause text-danger"></i>' !!}
                                 </p>
@@ -39,10 +46,10 @@ Contenu de l'annonce
                                 <div class="pt-4">
                                     <div class="row">
                                         <div class="text-center">
-                                            <a href="tel:+221780103636" class="text-dark m-2" data-bs-toggle="tooltip" data-bs-placement="bottom" title="En cours">
+                                            <a href="tel:+{{ $listing->phone }}" class="text-dark m-2">
                                                 <i class="fa-2x fa-solid fa-phone"></i>
                                             </a>
-                                            <a href="https://wa.me/221780103636?text=Bonjour" class="text-success m-2" data-bs-toggle="tooltip" data-bs-placement="bottom" title="En cours">
+                                            <a href="https://wa.me/{{ $listing->phone }}?text=Bonjour" class="text-success m-2">
                                                 <i class="fa-2x fa-brands fa-whatsapp"></i>
                                             </a>
                                         </div>
