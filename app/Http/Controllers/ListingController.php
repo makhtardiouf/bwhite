@@ -39,12 +39,19 @@ class ListingController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $user = Auth::user();
-        Log::debug("Getting listings for " . $user->email);
-        if ($user->hasRole('admin')) {
-            $listings = $this->listingRepository->all();
+        $listings = array();
+        if (Auth::check()) {
+            $user = Auth::user();
+
+            if ($user->hasRole('admin') || $user->hasRole('staff')) {
+                $listings = Listing::orderByDesc('id')->get();
+
+            } else {
+                //  Listing::where('user_id', $user->id)->orderByDesc('id');
+                $listings = Listing::where('user_id', $user->id)->orderByDesc('id')->get();
+            }
         } else {
-            $listings = Listing::where('approved', true)->orderByDesc('id');
+            $listings = Listing::where('approved', true)->orderByDesc('id')->get();
         }
 
         return view('listings.index')
@@ -88,12 +95,14 @@ class ListingController extends AppBaseController
             $input["image"] = $fname;
             Log::debug("Uploaded file: $fname");
         }
-        $input["user_id"] = Auth::user()->id;
+        if (Auth::check()) {
+            $input["user_id"] = Auth::user()->id;
+        }
         $listing = $this->listingRepository->create($input);
 
-        notify()->success('Annonce sauvegardée');
+        notify()->success('Annonce sauvegardée, en attente de validation');
 
-        return redirect(route('listings.index'));
+        return view('listings.show')->with('listing', $listing);
     }
 
     /**
@@ -101,23 +110,7 @@ class ListingController extends AppBaseController
      */
     public function annonceStep1(Request $request)
     {
-        if ($request->isMethod('post')) {
-            $input = $request->all();
-            Log::debug("Public listing page 1:" . json_encode($input));
-
-            $image = $request->file('image');
-            if (empty($image)) {
-                Log::debug("Failed to obtain uploaded image");
-            } else {
-                $fname = $image->getClientOriginalName();
-                $path = $image->move($this->uploadPath, $fname);
-
-                $input["image"] = $fname;
-                Log::debug("Uploaded file: $fname");
-            }
-            Session::put('listingStep1', $input);
-            return redirect()->to('/listings/step2');
-        }
+       // $request->flash();
         return view('listings.step1');
     }
 
@@ -125,19 +118,21 @@ class ListingController extends AppBaseController
     /**
      * Save public Listing
      */
-    public function annonceStep2(CreateListingRequest $request)
+    public function annonceStep2(Request $request)
     {
-        if ($request->isMethod('post')) {
-            $data = Session::pull('listingStep1', []);
-            $data = array_merge($data, $request->all());
-            Log::debug("Listing step2:\n " . json_encode($data));
+        $image = $request->file('image');
+        if (empty($image)) {
+            Log::debug("Failed to obtain uploaded image");
+        } else {
+            $fname = $image->getClientOriginalName();
+            $path = $image->move($this->uploadPath, $fname);
 
-            $listing = $this->listingRepository->create($data);
-
-            notify()->success('Annonce sauvegardée');
-
-            return redirect(route('listings.index'));
+            $input["image"] = $fname;
+            Log::debug("Uploaded file: $fname");
         }
+        $request->flash();
+        Log::debug("Listing step2:\n " . json_encode($request));
+        
         return view('listings.step2');
     }
 

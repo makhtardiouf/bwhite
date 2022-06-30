@@ -37,7 +37,7 @@ Route::get('/sysinfo', function () {
 Route::get('/listings/show/{id}', [ListingController::class, 'show'])->name('listings.show');
 Route::any('/listings/step1', [ListingController::class, 'annonceStep1'])->name('listings.annonceStep1');
 Route::any('/listings/step2', [ListingController::class, 'annonceStep2'])->name('listings.annonceStep2');
-
+Route::post('/listings/store', [ListingController::class, 'store'])->name('listings.store');
 
 Route::group(['middleware' => 'auth'], function () {
 
@@ -81,7 +81,7 @@ Route::group(['middleware' => 'auth'], function () {
 
 
 	Route::resource('categories', App\Http\Controllers\CategoryController::class);
-	Route::resource('listings', App\Http\Controllers\ListingController::class);
+	Route::resource('listings', App\Http\Controllers\ListingController::class)->except(['store']);
 });
 
 Route::group(['middleware' => ['can:approve listing', 'can:disapprove listing']], function () {

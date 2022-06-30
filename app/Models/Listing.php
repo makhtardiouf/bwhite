@@ -36,9 +36,13 @@ class Listing extends Model
         'category',
         'price',
         'image',
+
         'area',
-        'category_id',
-        'user_id'
+        'name',
+        'adresse',
+        'phone',
+        'user_id',
+        'category_id'
     ];
 
     /**
@@ -63,7 +67,8 @@ class Listing extends Model
      * @var array
      */
     public static $rules = [
-        'title' => 'required'
+        'title' => 'required',
+        'price' => 'required'
     ];
 
     /**
@@ -72,5 +77,13 @@ class Listing extends Model
     public function category()
     {
         return $this->belongsTo(\App\Models\Category::class, 'category_id', 'id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     **/
+    public function user()
+    {
+        return $this->belongsTo(\App\Models\User::class, 'user_id', 'id');
     }
 }

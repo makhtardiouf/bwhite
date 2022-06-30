@@ -11,22 +11,21 @@ class HomeController extends Controller
 {
     public function home()
     {
-        $user = Auth::user();
         $listings = array();
-        if (!$user) {
-            $listings = Listing::where('approved', true)->orderByDesc('id');
-        } else {
-            Log::debug("Getting listings for " . $user->email);
-            if ($user->hasRole('admin')) {
-                $listings = Listing::orderByDesc('id');
+        if (Auth::check()) {
+            $user = Auth::user();
+
+            if ($user->hasRole('admin') || $user->hasRole('staff')) {
+                $listings = Listing::orderByDesc('id')->get();
+
             } else {
-              //  Listing::where('user_id', $user->id)->orderByDesc('id');
-              $listings = Listing::where('approved', true)->orderByDesc('id');
+                //  Listing::where('user_id', $user->id)->orderByDesc('id');
+                $listings = Listing::where('user_id', $user->id)->orderByDesc('id')->get();
             }
+        } else {
+            $listings = Listing::where('approved', true)->orderByDesc('id')->get();
         }
 
-        // Log::debug("Retrieved listings: " . json_encode($listings));
-        // return redirect('home');
         return view('home')->with('listings', $listings);
     }
 

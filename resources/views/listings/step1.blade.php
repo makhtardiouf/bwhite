@@ -7,7 +7,7 @@ Create Listing
 @section('content')
 <section class="section">
     <div class="section-header">
-        <h3 class="page__heading m-2">Saisir une nouvelle annonce</h3>
+        <h3 class="page__heading m-2">Coordonnées de la nouvelle annonce</h3>
     </div>
 
     <div class="content">
@@ -20,7 +20,27 @@ Create Listing
                             <br>
                             {!! Form::open(['route' => 'listings.annonceStep2', 'files' => true, 'role' => 'form text-left']) !!}
                             <div class="row">
-                                @include('listings.fields')
+                                <div class="form-group col-sm-6">
+                                    {!! Form::label('name', 'Prénoms et Nom:') !!}
+                                    <input type="text" class="form-control" placeholder="Prénoms et Nom" name="name" id="name" aria-label="Name" aria-describedby="name" value="{{ old('name') }}" required>
+                                </div>
+                                <div class="clearfix"></div>
+
+                                <div class="form-group col-sm-6">
+                                    {!! Form::label('adresse', 'Adresse:') !!}
+                                    <input type="text" class="form-control" placeholder="Adresse" name="adresse" id="adresse" aria-label="adresse" aria-describedby="adresse" value="{{ old('adresse') }}">
+                                </div>
+                                <div class="clearfix"></div>
+
+                                <div class="form-group col-sm-6">
+                                    {!! Form::label('phone', 'Téléphone mobile:') !!}
+                                    <input type="number" class="form-control" placeholder="Téléphone" name="phone" id="phone" aria-label="phone" aria-describedby="phone" value="{{ old('phone') }}" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group col-sm-6 float-right mt-4">
+                                <a href="{{ route('listings.index') }}" class="btn btn-light m-2">Annuler</a>
+                                {!! Form::submit('Suivant', ['class' => 'btn bg-gradient-dark m-2']) !!}
                             </div>
                             {!! Form::close() !!}
                         </div>
@@ -30,36 +50,4 @@ Create Listing
         </div>
     </div>
 </section>
-@endsection
-
-@section('extrascripts')
-<script src="https://cdn.ckeditor.com/ckeditor5/34.1.0/classic/ckeditor.js"></script>
-<script src="https://unpkg.com/filepond@^4/dist/filepond.js"></script>
-
-<script>
-    ClassicEditor
-        .create(document.querySelector('#description'))
-        .then(editor => {
-            console.log(editor);
-        })
-        .catch(error => {
-            console.error(error);
-        });
-</script>
-
-<script>
-    // FilePond.setOptions({
-    //     allowMultiple: true,
-    //     server: {
-    //         process: "{{ config('filepond.server.process') }}",
-    //         revert: "{{ config('filepond.server.revert') }}",
-    //         headers: {
-    //             'X-CSRF-TOKEN': "{{ @csrf_token() }}",
-    //         }
-    //     }
-    // });
-
-    // FilePond.create(document.querySelector('input[type="file"]'));
-</script>
-
 @endsection
