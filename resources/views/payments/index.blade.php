@@ -1,23 +1,20 @@
 @extends('layouts.app')
 @section('title')
-    Payments 
+Payments
 @endsection
 @section('content')
-    <section class="section">
-        <div class="section-header">
-            <h1>Payments</h1>
-            <div class="section-header-breadcrumb">
-                <a href="{{ route('payments.create')}}" class="btn btn-primary form-btn">Payments <i class="fas fa-plus"></i></a>
-            </div>
-        </div>
+<section class="section">
+    <div class="section-header p-4">
+        <h4 class="h4">Paiements effectués</h4>
+    </div>
+
     <div class="section-body">
-       <div class="card">
+        <div class="card">
             <div class="card-body">
                 @include('payments.table')
             </div>
-       </div>
-   </div>
-    
-    </section>
-@endsection
+        </div>
+    </div>
 
+</section>
+@endsection

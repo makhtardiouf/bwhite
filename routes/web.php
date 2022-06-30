@@ -79,12 +79,12 @@ Route::group(['middleware' => 'auth'], function () {
 		return view('dashboard');
 	})->name('sign-up');
 
-
 	Route::resource('categories', App\Http\Controllers\CategoryController::class);
 	Route::resource('listings', App\Http\Controllers\ListingController::class)->except(['store']);
 });
 
 Route::group(['middleware' => ['can:approve listing', 'can:disapprove listing']], function () {
+	Route::resource('payments', App\Http\Controllers\PaymentsController::class);
 
 	Route::get('/listings/{id}/approve', [ListingController::class, 'approve'])->name('listings.approve');
 	Route::get('/listings/{id}/disapprove', [ListingController::class, 'disapprove'])->name('listings.disapprove');
@@ -116,6 +116,3 @@ Route::group(['middleware' => 'guest'], function () {
 Route::get('/login', function () {
     return view('session/login-session');
 })->name('login');
-
-
-Route::resource('payments', App\Http\Controllers\PaymentsController::class);

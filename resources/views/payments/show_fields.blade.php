@@ -1,42 +1,31 @@
 <!-- Id Field -->
 <div class="form-group">
-    {!! Form::label('id', 'Id:') !!}
-    <p>{{ $payments->id }}</p>
+    {!! Form::label('id', 'Id:') !!}: {{ $payments->id }}
 </div>
 
 <!-- Type Field -->
 <div class="form-group">
-    {!! Form::label('type', 'Type:') !!}
-    <p>{{ $payments->type }}</p>
+    {!! Form::label('type', 'Type:') !!}: {{ $payments->type }}
 </div>
 
 <!-- Product Field -->
 <div class="form-group">
-    {!! Form::label('product', 'Product:') !!}
-    <p>{{ $payments->product }}</p>
+    {!! Form::label('product', 'Product:') !!} {{ $payments->product }}
 </div>
 
 <!-- Platform Field -->
 <div class="form-group">
-    {!! Form::label('platform', 'Platform:') !!}
-    <p>{{ $payments->platform }}</p>
+    {!! Form::label('platform', 'Platform:') !!} {{ $payments->platform }}
 </div>
 
 <!-- Data Field -->
 <div class="form-group">
-    {!! Form::label('data', 'Data:') !!}
-    <p>{{ $payments->data }}</p>
-</div>
-
-<!-- Created At Field -->
-<div class="form-group">
-    {!! Form::label('created_at', 'Created At:') !!}
-    <p>{{ $payments->created_at }}</p>
+    {!! Form::label('data', 'Données:') !!}
+    <p clas="p-2">{{ json_encode($payments->data) }}</p>
 </div>
 
 <!-- Updated At Field -->
 <div class="form-group">
-    {!! Form::label('updated_at', 'Updated At:') !!}
-    <p>{{ $payments->updated_at }}</p>
+    {!! Form::label('updated_at', 'Updated At:') !!}: {{ $payments->updated_at }}
 </div>
 

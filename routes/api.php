@@ -19,4 +19,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-Route::resource('payments', App\Http\Controllers\API\PaymentsAPIController::class);
+Route::resource('payments/wave', App\Http\Controllers\API\PaymentsAPIController::class);

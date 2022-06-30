@@ -81,6 +81,12 @@
           <span class="nav-link-text ms-1">Boutiques</span>
         </a>
       </li>
+      <li class="nav-item pb-1">
+        <a class="nav-link" href="/payments">
+        <i class="fa-solid fa-vault"></i>
+          <span class="nav-link-text ms-1">Paiements</span>
+        </a>
+      </li>
       @endcan
 
       <li class="nav-item pb-1">

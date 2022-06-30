@@ -8,6 +8,7 @@ use App\Models\Payments;
 use App\Repositories\PaymentsRepository;
 use Illuminate\Http\Request;
 use App\Http\Controllers\AppBaseController;
+use Exception;
 use Response;
 
 /**
@@ -34,13 +35,18 @@ class PaymentsAPIController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $payments = $this->paymentsRepository->all(
-            $request->except(['skip', 'limit']),
-            $request->get('skip'),
-            $request->get('limit')
-        );
 
-        return $this->sendResponse($payments->toArray(), 'Payments retrieved successfully');
+        try {
+            $payments = $this->paymentsRepository->all(
+                $request->except(['skip', 'limit']),
+                $request->get('skip'),
+                $request->get('limit')
+            );
+
+            return $this->sendResponse($payments->toArray(), 'Payment retrieved successfully');
+        } catch (Exception $e) {
+            return response()->json("Processing error: \n" . $e->getMessage());
+        }
     }
 
     /**
@@ -53,11 +59,15 @@ class PaymentsAPIController extends AppBaseController
      */
     public function store(CreatePaymentsAPIRequest $request)
     {
-        $input = $request->all();
+        try {
+            $input = $request->all();
 
-        $payments = $this->paymentsRepository->create($input);
+            $payments = $this->paymentsRepository->create($input);
 
-        return $this->sendResponse($payments->toArray(), 'Payments saved successfully');
+            return $this->sendResponse($payments->toArray(), 'Payment saved successfully');
+        } catch (Exception $e) {
+            return response()->json("Processing error: \n" . $e->getMessage());
+        }
     }
 
     /**
@@ -70,14 +80,17 @@ class PaymentsAPIController extends AppBaseController
      */
     public function show($id)
     {
-        /** @var Payments $payments */
-        $payments = $this->paymentsRepository->find($id);
+        try {
+            /** @var Payments $payments */
+            $payments = $this->paymentsRepository->find($id);
 
-        if (empty($payments)) {
-            return $this->sendError('Payments not found');
+            if (empty($payments)) {
+                return $this->sendError('Payment not found');
+            }
+            return $this->sendResponse($payments->toArray(), 'Payment retrieved successfully');
+        } catch (Exception $e) {
+            return response()->json("Processing error: \n" . $e->getMessage());
         }
-
-        return $this->sendResponse($payments->toArray(), 'Payments retrieved successfully');
     }
 
     /**
@@ -91,18 +104,21 @@ class PaymentsAPIController extends AppBaseController
      */
     public function update($id, UpdatePaymentsAPIRequest $request)
     {
-        $input = $request->all();
+        try {
+            $input = $request->all();
 
-        /** @var Payments $payments */
-        $payments = $this->paymentsRepository->find($id);
+            /** @var Payments $payments */
+            $payments = $this->paymentsRepository->find($id);
 
-        if (empty($payments)) {
-            return $this->sendError('Payments not found');
+            if (empty($payments)) {
+                return $this->sendError('Payment not found');
+            }
+            $payments = $this->paymentsRepository->update($input, $id);
+
+            return $this->sendResponse($payments->toArray(), 'Payment updated successfully');
+        } catch (Exception $e) {
+            return response()->json("Processing error: \n" . $e->getMessage());
         }
-
-        $payments = $this->paymentsRepository->update($input, $id);
-
-        return $this->sendResponse($payments->toArray(), 'Payments updated successfully');
     }
 
     /**
@@ -117,15 +133,19 @@ class PaymentsAPIController extends AppBaseController
      */
     public function destroy($id)
     {
-        /** @var Payments $payments */
-        $payments = $this->paymentsRepository->find($id);
+        try {
+            /** @var Payments $payments */
+            $payments = $this->paymentsRepository->find($id);
 
-        if (empty($payments)) {
-            return $this->sendError('Payments not found');
+            if (empty($payments)) {
+                return $this->sendError('Payment not found');
+            }
+
+            $payments->delete();
+            return $this->sendSuccess("Payment $id deleted successfully");
+
+        } catch (Exception $e) {
+            return response()->json("Processing error: \n" . $e->getMessage());
         }
-
-        $payments->delete();
-
-        return $this->sendSuccess('Payments deleted successfully');
     }
 }

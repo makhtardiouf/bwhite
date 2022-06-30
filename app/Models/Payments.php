@@ -51,6 +51,7 @@ class Payments extends Model
         'type' => 'string',
         'product' => 'string',
         'platform' => 'string',
+        'data' => 'array',
         'user_id' => 'integer'
     ];
 
