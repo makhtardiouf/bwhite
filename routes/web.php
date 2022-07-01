@@ -87,7 +87,8 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::resource('categories', App\Http\Controllers\CategoryController::class);
 	Route::resource('listings', App\Http\Controllers\ListingController::class)->except(['store']);
 
-	Route::any('/payments/paywave', [PaymentsController::class, 'submitWavePayment'])->name('payments.paywave');
+	Route::post('/payments/wave', [PaymentsController::class, 'submitWavePayment'])->name('payments.wave');
+	Route::post('/payments/waveresult', [PaymentsController::class, 'displayWavePayment'])->name('payments.waveresult');
 });
 
 Route::group(['middleware' => ['can:approve listing', 'can:disapprove listing']], function () {

@@ -79,19 +79,27 @@ class PaymentsController extends AppBaseController
         try {
             $input = $request->all();
             $amount = $request->price;
-            $token = Settings::where('partner', 'WAVE')->where('key', 'DEV_API_KEY')->get();
+            $token = Settings::where('partner', 'WAVE')->where('key', 'DEV_API_KEY')->value('value');
+           
+            $url = $this->baseurl . "/v1/checkout/sessions";
+            $data = [
+                "amount" => "$amount",
+                "currency" => "XOF",
+                "error_url" => "https://bwhite.albouritech.com/api/payments/waveresult",
+                "success_url" => "https://bwhite.albouritech.com/api/payments/waveresult"
+            ];
 
             Log::debug("API key $token");
             Log::debug("Received input payment: " . json_encode($input));
+            Log::debug("URL $url");
+            Log::debug("Payload: " . json_encode($data));
 
-            $resp = Http::withToken($token)->post($this->baseurl . "/v1/checkout/sessions", [
-                "amount" => "$amount",
-                "currency" => "XOF",
-                "error_url" => "https://bwhite.albouritech.com/api/payments/wave",
-                "success_url" => "https://bwhite.albouritech.com/api/payments/wave"
-            ]);
-            Log::debug("Response from Wave:\n" . json_encode($resp));
-            return $this->displayWavePayment($request);
+            $resp = Http::withToken($token)->post($url, $data);
+            $resp->throw();
+            $data = json_decode($resp->body());
+            Log::debug("Response from Wave:\n" . json_encode($data));
+
+           return view('payments.wave')->with('wave_launch_url', $data->wave_launch_url);
 
         } catch (Exception $e) {
             Log::debug("Payment processing error: " . $e->getMessage());
@@ -100,7 +108,10 @@ class PaymentsController extends AppBaseController
 
     public function displayWavePayment(Request $request)
     {
-        return view('payments.paywave')->with('wave_launch_url', "#");
+        Log::debug("Payment response from Wave:\n" . json_encode($request));
+
+        $payment = json_decode($request);
+        return view('payments.waveresult')->with('payment', $payment);
     }
 
     /**

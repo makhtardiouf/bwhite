@@ -21,7 +21,7 @@
                         <div class="form-group col-sm-6 float-right">
                             <a href="{{$wave_launch_url}}" class="btn btn-outline-info m-4"><img src="{{asset('images/wave-logo.png')}}" class="h-12"/></a>
                             <div class="clear-fix"></div>
-                            <a href="{{ route('payments.index') }}" class="btn btn-light mx-4 my-2">Annuler</a>
+                            <a href="/packs" class="btn btn-light mx-4 my-2">Annuler</a>
                         </div>
                     </div>
                 </div>
