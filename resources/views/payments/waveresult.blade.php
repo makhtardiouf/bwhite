@@ -10,15 +10,15 @@
             <div class="card my-4">
                 <div class="card-header p-2 position-relative">
                     <div class="btn btn-outline-dark border-radius-lg pt-2">
-                        <h6 class="text-capitalize h6">Resultat du paiement Wave</h6>
+                        <h6 class="text-capitalize h6">Résultat du paiement Wave</h6>
                     </div>
                 </div>
 
                 <div class="card-body p-2">
                    <ul>
-                    <li>Reference: {{$payment->id}}</li>
-                    <li>Type: {{$payment->type}}</li>
-                    <li>Status: {{$payment->data["checkout_status"]}}</li>
+                    <li>Reference: {{ $payment->id }}</li>
+                    <li>Montant: {{ $payment->data["amount"] }} XOF</li>
+                    <li>Statut: {{ $payment->data["payment_status"] }}</li>
                     <li></li>
                    </ul>
                     <div class="row">

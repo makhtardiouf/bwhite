@@ -36,7 +36,6 @@ class PaymentsAPIController extends AppBaseController
      */
     public function index(Request $request)
     {
-
         try {
             $payments = $this->paymentsRepository->all(
                 $request->except(['skip', 'limit']),
@@ -44,7 +43,7 @@ class PaymentsAPIController extends AppBaseController
                 $request->get('limit')
             );
 
-            return $this->sendResponse($payments->toArray(), 'Payment retrieved successfully');
+            return $this->sendResponse($payments->toArray(), 'Payments retrieved successfully');
         } catch (Exception $e) {
             return response()->json("Processing error: \n" . $e->getMessage());
         }
@@ -62,10 +61,14 @@ class PaymentsAPIController extends AppBaseController
     {
         try {
             $input = $request->all();
+            $payment = $this->paymentsRepository->create($input);
 
-            $payments = $this->paymentsRepository->create($input);
+            if ( $request->expectsJson() ) {
+                return $this->sendResponse($payment->toArray(), 'Payment saved successfully');
+            }
 
-            return $this->sendResponse($payments->toArray(), 'Payment saved successfully');
+            return view('payments.waveresult')->with('payment', $payment);
+
         } catch (Exception $e) {
             return response()->json("Processing error: \n" . $e->getMessage());
         }

@@ -7,9 +7,11 @@ use App\Http\Requests\UpdatePaymentsRequest;
 use App\Repositories\PaymentsRepository;
 use App\Http\Controllers\AppBaseController;
 use App\Models\Settings;
+use App\Models\Payments;
 
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Http;
 
@@ -80,27 +82,45 @@ class PaymentsController extends AppBaseController
             $input = $request->all();
             $amount = $request->price;
             $token = Settings::where('partner', 'WAVE')->where('key', 'DEV_API_KEY')->value('value');
-           
+
             $url = $this->baseurl . "/v1/checkout/sessions";
+
             $data = [
                 "amount" => "$amount",
                 "currency" => "XOF",
-                "error_url" => "https://bwhite.welliesmart.com/payments/waveresult",
+                "error_url" => "https://bwhite.welliesmart.com/api/payments/wave",
                 "success_url" => "https://bwhite.welliesmart.com/payments/waveresult"
             ];
 
-            Log::debug("API key $token");
             Log::debug("Received input payment: " . json_encode($input));
-            Log::debug("URL $url");
-            Log::debug("Payload: " . json_encode($data));
 
             $resp = Http::withToken($token)->post($url, $data);
             $resp->throw();
             $data = json_decode($resp->body());
+
             Log::debug("Response from Wave:\n" . json_encode($data));
 
-           return view('payments.wave')->with('wave_launch_url', $data->wave_launch_url);
+            if (Auth::check()) {
+               // Log::debug(json_encode(Auth::user()));
+                //   $data->user_id = Auth::user()->id;
+            }
 
+            // $data = json_decode($request);
+            // $payment = Payments::updateOrCreate([
+            //     'id',
+            //     'type',
+            //     'product',
+            //     'platform',
+            //     'data',
+            //     'user_id'
+            // ], $data);
+
+            // $payment->save();
+            if ($data) {
+                return view('payments.wave')->with('wave_launch_url', $data->wave_launch_url);
+            } else {
+                return view('payments.wave')->with('wave_launch_url', '#');
+            }
         } catch (Exception $e) {
             Log::debug("Payment processing error: " . $e->getMessage());
         }
@@ -109,8 +129,7 @@ class PaymentsController extends AppBaseController
     public function displayWavePayment(Request $request)
     {
         Log::debug("Payment response from Wave:\n" . json_encode($request));
-
-        $payment = json_decode($request);
+        $payment = Payments::orderByDesc('id')->first();
         return view('payments.waveresult')->with('payment', $payment);
     }
 

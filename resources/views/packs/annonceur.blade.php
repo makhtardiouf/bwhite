@@ -30,7 +30,7 @@
 
                         <div class="d-flex">
                             {!! Form::open(['route' => 'payments.wave']) !!}
-                            <div class="row">
+                            <div class="row d-none">
                                 <div class="form-group">
                                     {!! Form::label('product', 'Produit:') !!}
                                     {!! Form::text('product', "Pack Annonceurs", ['class' => 'form-control']) !!}
@@ -49,24 +49,23 @@
                                 </div>
 
                                 <div class="clearfix"></div>
-
+                            </div>
+                            <div class="row">
                                 <div class="form-group col-sm-12 pull-right">
                                     <a href="/packs" class="btn btn-light m-2">Retour</a>
 
                                     {!! Form::submit('Souscrire', ['class' => 'btn bg-gradient-dark m-2']) !!}
                                 </div>
-
-                                {!! Form::close() !!}
-                                <div class="">
-
-                                </div>
                             </div>
+                            {!! Form::close() !!}
+
                         </div>
                     </div>
                 </div>
-
             </div>
+
         </div>
     </div>
+</div>
 
 @endsection
