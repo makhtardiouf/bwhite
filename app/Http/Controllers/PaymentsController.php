@@ -85,8 +85,8 @@ class PaymentsController extends AppBaseController
             $data = [
                 "amount" => "$amount",
                 "currency" => "XOF",
-                "error_url" => "https://bwhite.albouritech.com/api/payments/waveresult",
-                "success_url" => "https://bwhite.albouritech.com/api/payments/waveresult"
+                "error_url" => "https://bwhite.welliesmart.com/payments/waveresult",
+                "success_url" => "https://bwhite.welliesmart.com/payments/waveresult"
             ];
 
             Log::debug("API key $token");
