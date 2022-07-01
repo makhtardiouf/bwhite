@@ -129,7 +129,7 @@ class PaymentsController extends AppBaseController
     public function displayWavePayment(Request $request)
     {
         Log::debug("Payment response from Wave:\n" . json_encode($request));
-        $payment = Payments::orderByDesc('id')->first();
+        $payment = Payments::orderByDesc('updated_at')->first();
         return view('payments.waveresult')->with('payment', $payment);
     }
 
