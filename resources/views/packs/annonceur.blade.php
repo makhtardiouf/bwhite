@@ -29,7 +29,7 @@
                             Ce pack est réservé aux agences immobilières, aux gérants de parking et aux particuliers voulant écouler un objet.</p>
 
                         <div class="d-flex">
-                            {!! Form::open(['route' => 'settings.store']) !!}
+                            {!! Form::open(['route' => 'payments.paywave']) !!}
                             <div class="row">
                                 <div class="form-group">
                                     {!! Form::label('product', 'Produit:') !!}
@@ -69,4 +69,4 @@
         </div>
     </div>
 
-    @endsection
+@endsection

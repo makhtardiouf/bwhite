@@ -6,7 +6,13 @@ use App\Http\Requests\CreatePaymentsRequest;
 use App\Http\Requests\UpdatePaymentsRequest;
 use App\Repositories\PaymentsRepository;
 use App\Http\Controllers\AppBaseController;
+use App\Models\Settings;
+
+use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Http;
+
 use Flash;
 use Response;
 
@@ -15,7 +21,7 @@ class PaymentsController extends AppBaseController
     /** @var PaymentsRepository $paymentsRepository*/
     private $paymentsRepository;
     private $baseurl = "https://api.wave.com";
-    
+
     public function __construct(PaymentsRepository $paymentsRepo)
     {
         $this->paymentsRepository = $paymentsRepo;
@@ -59,9 +65,42 @@ class PaymentsController extends AppBaseController
 
         $payments = $this->paymentsRepository->create($input);
 
-        Flash::success('Payments saved successfully.');
+        notify()->success('Payments saved successfully.');
 
         return redirect(route('payments.index'));
+    }
+
+    /**
+     * Submit payment to wave
+     * 
+     */
+    public function submitWavePayment(Request $request)
+    {
+        try {
+            $input = $request->all();
+            $amount = $request->price;
+            $token = Settings::where('partner', 'WAVE')->where('key', 'DEV_API_KEY')->get();
+
+            Log::debug("API key $token");
+            Log::debug("Received input payment: " . json_encode($input));
+
+            $resp = Http::withToken($token)->post($this->baseurl . "/v1/checkout/sessions", [
+                "amount" => "$amount",
+                "currency" => "XOF",
+                "error_url" => "https://bwhite.albouritech.com/api/payments/wave",
+                "success_url" => "https://bwhite.albouritech.com/api/payments/wave"
+            ]);
+            Log::debug("Response from Wave:\n" . json_encode($resp));
+            return $this->displayWavePayment($request);
+
+        } catch (Exception $e) {
+            Log::debug("Payment processing error: " . $e->getMessage());
+        }
+    }
+
+    public function displayWavePayment(Request $request)
+    {
+        return view('payments.paywave')->with('wave_launch_url', "#");
     }
 
     /**
@@ -76,7 +115,7 @@ class PaymentsController extends AppBaseController
         $payments = $this->paymentsRepository->find($id);
 
         if (empty($payments)) {
-            Flash::error('Payments not found');
+            notify()->error('Payments not found');
 
             return redirect(route('payments.index'));
         }
@@ -96,7 +135,7 @@ class PaymentsController extends AppBaseController
         $payments = $this->paymentsRepository->find($id);
 
         if (empty($payments)) {
-            Flash::error('Payments not found');
+            notify()->error('Payments not found');
 
             return redirect(route('payments.index'));
         }
@@ -117,14 +156,14 @@ class PaymentsController extends AppBaseController
         $payments = $this->paymentsRepository->find($id);
 
         if (empty($payments)) {
-            Flash::error('Payments not found');
+            notify()->error('Payments not found');
 
             return redirect(route('payments.index'));
         }
 
         $payments = $this->paymentsRepository->update($request->all(), $id);
 
-        Flash::success('Payments updated successfully.');
+        notify()->success('Payments updated successfully.');
 
         return redirect(route('payments.index'));
     }
@@ -143,14 +182,14 @@ class PaymentsController extends AppBaseController
         $payments = $this->paymentsRepository->find($id);
 
         if (empty($payments)) {
-            Flash::error('Payments not found');
+            notify()->error('Payments not found');
 
             return redirect(route('payments.index'));
         }
 
         $this->paymentsRepository->delete($id);
 
-        Flash::success('Payments deleted successfully.');
+        notify()->success('Payments deleted successfully.');
 
         return redirect(route('payments.index'));
     }

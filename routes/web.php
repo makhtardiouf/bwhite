@@ -7,6 +7,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ResetController;
 use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\ListingController;
+use App\Http\Controllers\PaymentsController;
 use App\Http\Livewire\Categories;
 
 use Illuminate\Http\Request;
@@ -85,10 +86,13 @@ Route::group(['middleware' => 'auth'], function () {
 
 	Route::resource('categories', App\Http\Controllers\CategoryController::class);
 	Route::resource('listings', App\Http\Controllers\ListingController::class)->except(['store']);
+
+	Route::any('/payments/paywave', [PaymentsController::class, 'submitWavePayment'])->name('payments.paywave');
 });
 
 Route::group(['middleware' => ['can:approve listing', 'can:disapprove listing']], function () {
-	Route::resource('payments', App\Http\Controllers\PaymentsController::class);
+
+	Route::resource('payments', App\Http\Controllers\PaymentsController::class)->except(['submitWavePayment']);
 	Route::resource('settings', App\Http\Controllers\SettingsController::class);
 
 	Route::get('/listings/{id}/approve', [ListingController::class, 'approve'])->name('listings.approve');
