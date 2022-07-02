@@ -23,4 +23,10 @@ class PackController extends Controller
     {
         return view('packs.merchant');
     }
+
+    public function invest()
+    {
+        return view('packs.invest');
+    }
+
 }

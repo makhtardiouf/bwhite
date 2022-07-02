@@ -32,6 +32,7 @@ Route::get('/', [HomeController::class, 'home'])->name('home');
 Route::get('/packs', [PackController::class, 'index'])->name('packs');
 Route::get('/packs/annonceur', [PackController::class, 'annonceur'])->name('packsannonceur');
 Route::get('/packs/merchant', [PackController::class, 'merchant'])->name('packs.merchant');
+Route::get('/packs/invest', [PackController::class, 'invest'])->name('packs.invest');
 
 
 Route::get('/sysinfo', function () {

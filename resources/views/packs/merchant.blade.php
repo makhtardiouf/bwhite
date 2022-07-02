@@ -4,7 +4,7 @@
 <div class="card my-4">
     <div class="card-header p-2 position-relative">
         <div class="btn btn-outline-dark border-radius-lg pt-2">
-            <h6 class="text-capitalize h6">Pack Commerçants Bwhite: 1000F</h6>
+            <h6 class="text-capitalize h6">Pack Commerçants Bwhite: 30,000F</h6>
         </div>
     </div>
 
@@ -25,7 +25,7 @@
                         </a>
                         <p class="mb-4 text-sm">
                             Avec ce pack postez gratuitement vos annonces et vos produits seront minutieusement montés et présentés par notre équipe de monteurs infographes.
-                            Après la présentation ils seront ensuite exposés dans la plate-forme et partagés encore dans tous les réseaux sociaux par nos 30.000 agents commerciaux
+                            Après la présentation ils seront ensuite exposés dans la plateforme et partagés encore dans tous les réseaux sociaux par nos 30.000 agents commerciaux
                             présents partout au Sénégal, ainsi en un clic vous pouvez vous faire beaucoup de ventes par jour sans bouger.</p>
 
                         <div class="d-flex">
