@@ -33,7 +33,7 @@ Contenu de l'annonce
                                 </p>
 
                                 <p class="my-2 h6">
-                                   Publication: {{ Carbon\Carbon::parse($listing->updated_at)->format('F d, Y') }}
+                                   Publication: {{ strftime('%d-%m-%Y',strtotime($listing->updated_at)) }}
                                 </p>
 
                                 <p class="my-2">

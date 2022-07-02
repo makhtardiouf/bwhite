@@ -12,6 +12,8 @@ Payments
         <div class="card">
             <div class="card-body">
                 @include('payments.table')
+
+                {{ $payments->links() }}
             </div>
         </div>
     </div>

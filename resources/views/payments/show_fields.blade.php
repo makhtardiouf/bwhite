@@ -26,6 +26,6 @@
 
 <!-- Updated At Field -->
 <div class="form-group">
-    {!! Form::label('updated_at', 'Updated At:') !!}: {{ $payments->updated_at }}
+    {!! Form::label('updated_at', 'Date:') !!}: {{ $payments->updated_at }}
 </div>
 
