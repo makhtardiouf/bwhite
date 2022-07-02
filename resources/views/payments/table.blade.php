@@ -27,7 +27,7 @@
             @endforeach
 
             <tr><td colspan="3" class="h-2 bg-gradient-info"><hr></td></tr>
-            <tr class="h5 float-start"><td>Total</td><td>{{ number_format($total, 0, ',', '.') }} XOF</td><td></td></tr>
+            <tr class="h5 float-start"><td>Total</td><td>{{ number_format($total, 0, ',', '.') }} XOF, {{ $payments->count() }} paiements</td><td></td></tr>
         </tbody>
     </table>
 </div>

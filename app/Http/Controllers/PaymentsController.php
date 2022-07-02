@@ -38,7 +38,7 @@ class PaymentsController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $payments = Payments::orderByDesc('created_at')->paginate(20);
+        $payments = Payments::orderByDesc('created_at')->paginate(15);
         
         return view('payments.index')
             ->with('payments', $payments);

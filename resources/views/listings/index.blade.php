@@ -15,6 +15,9 @@ Les annonces
 
             <div class="card-body py-4 px-2">
                 @include('listings.table')
+
+                <div class="my-4">{{ $listings->links() }}</div>
+
                 <div class="section-header-breadcrumb">
                     <a href="{{ route('listings.create')}}" class="btn btn-sm bg-gradient-dark">Ajouter</a>
                 </div>

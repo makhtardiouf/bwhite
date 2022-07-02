@@ -44,14 +44,14 @@ class ListingController extends AppBaseController
         if (Auth::check()) {
             $user = Auth::user();
             if ($user->hasRole('admin') || $user->hasRole('staff')) {
-                $listings = Listing::orderByDesc('id')->get();
+                $listings = Listing::orderByDesc('id')->paginate(15);
 
             } else {
                 //  $listings = Listing::where('user_id', $user->id)->orderByDesc('id')->get();
-                $listings = Listing::where('approved', true)->orderByDesc('id')->get();
+                $listings = Listing::where('approved', true)->orderByDesc('id')->paginate(15);
             }
         } else {
-            $listings = Listing::where('approved', true)->orderByDesc('id')->get();
+            $listings = Listing::where('approved', true)->orderByDesc('id')->paginate(15);
             Log::debug("Getting approved " . count($listings) . " listings for anonymous...");
         }
 
