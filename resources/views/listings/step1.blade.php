@@ -18,11 +18,24 @@ Create Listing
                         <div class="card-body ">
                             <div class="col-6">@include('adminlte-templates::common.errors')</div>
                             <br>
+                            @if(Auth::check())
+                                <div class="d-none">
+                                    {{ $name = old('name') ? old('name') : Auth::user()->name }}
+                                    {{ $phone = old('phone') ? old('phone') : Auth::user()->phone }}
+                                </div>
+                            @else
+                                <div class="d-none">
+                                    {{ $name = old('name') }}
+                                    {{ $phone = old('phone') }}
+                                </div>
+                            @endif
+                           
+
                             {!! Form::open(['route' => 'listings.annonceStep2', 'files' => true, 'role' => 'form text-left']) !!}
                             <div class="row">
                                 <div class="form-group col-sm-6">
                                     {!! Form::label('name', 'Prénoms et Nom:') !!}
-                                    <input type="text" class="form-control" placeholder="Prénoms et Nom" name="name" id="name" aria-label="Name" aria-describedby="name" value="{{ old('name') }}" required>
+                                    <input type="text" class="form-control" placeholder="Prénoms et Nom" name="name" id="name" aria-label="Name" aria-describedby="name" value="{{ $name }}" required>
                                 </div>
                                 <div class="clearfix"></div>
 
@@ -34,7 +47,7 @@ Create Listing
 
                                 <div class="form-group col-sm-6">
                                     {!! Form::label('phone', 'Téléphone mobile:') !!}
-                                    <input type="number" class="form-control" placeholder="Téléphone" name="phone" id="phone" aria-label="phone" aria-describedby="phone" value="{{ old('phone') }}" required>
+                                    <input type="number" class="form-control" placeholder="221" name="phone" id="phone" aria-label="phone" aria-describedby="phone" value="{{ $phone }}" required>
                                 </div>
                             </div>
 

@@ -21,7 +21,7 @@
                                     </a>
                                 </div>
                                 <div class="card-body px-1 pb-0">
-                                    <a href="/listings/{{ $listing->id}}">
+                                    <a href="/listings/show/{{ $listing->id}}">
                                         <h5>{{ $listing->title }}</h5>
                                     </a>
                                     <p class="mb-4 text-sm text-truncate">
@@ -30,7 +30,7 @@
                                     <div class="d-flex align-items-center justify-content-between">
                                         <a href="/listings/show/{{ $listing->id }}"><button type="button" class="btn btn-outline-primary btn-sm my-2">Voir</button></a>
 
-                                        <a href="https://wa.me/{{ $listing->phone }}?text=Bonjour" class="rounded-circle text-success" data-bs-toggle="tooltip" data-bs-placement="bottom">
+                                        <a href="https://wa.me/{{ $listing->phone }}?text=Bonjour, je suis intéressé par votre annonce {{url()->current()}}/listings/show/{{ $listing->id}}" class="rounded-circle text-success" data-bs-toggle="tooltip" data-bs-placement="bottom">
                                             <i class="fa-2x fa-brands fa-whatsapp"></i>
                                         </a>
                                         <a href="tel:+{{ $listing->phone }}" class="rounded-circle text-dark" data-bs-toggle="tooltip" data-bs-placement="bottom">
