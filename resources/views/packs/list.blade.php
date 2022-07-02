@@ -13,7 +13,7 @@
             <div class="col-xl-4 col-md-6 mb-xl-0 mb-4">
                 <div class="card card-blog card-plain">
                     <div class="position-relative">
-                        <a class="d-block shadow-xl border-radius-xl">
+                        <a class="d-block shadow-xl border-radius-xl" href="/packs/annonceur">
                             <img src="../assets/img/home-decor-1.jpg" alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
                         </a>
                     </div>
@@ -40,14 +40,14 @@
             <div class="col-xl-4 col-md-6 mb-xl-0 mb-4">
                 <div class="card card-blog card-plain">
                     <div class="position-relative">
-                        <a class="d-block shadow-xl border-radius-xl">
+                        <a class="d-block shadow-xl border-radius-xl" href="/packs/merchant">
                             <img src="../assets/img/home-decor-2.jpg" alt="img-blur-shadow" class="img-fluid shadow border-radius-lg">
                         </a>
                     </div>
                     <div class="card-body px-1 pb-0">
                         <a href="/">
                             <h5>
-                            <i class="fa-2x fa-solid fa-cart-shopping m-3"></i> Pack Commerçants
+                                <i class="fa-2x fa-solid fa-cart-shopping m-3"></i> Pack Commerçants
                             </h5>
                         </a>
                         <p class="mb-4 text-sm">
@@ -56,8 +56,9 @@
                             présents partout au Sénégal, ainsi en un clic vous pouvez vous faire beaucoup de ventes par jour sans bouger.</p>
 
                         <div class="d-flex align-items-center justify-content-between">
-                            <button type="button" class="btn btn-outline-primary btn-sm mb-0">Souscrire</button>
-
+                            <a href="/packs/merchant">
+                                <button type="button" class="btn btn-outline-primary btn-sm mb-0">Souscrire</button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -73,7 +74,7 @@
                     <div class="card-body px-1 pb-0">
                         <a href="/">
                             <h5>
-                            <i class="fa-2x fa-solid fa-money-bill-trend-up m-3"></i> Pack Investisseurs
+                                <i class="fa-2x fa-solid fa-money-bill-trend-up m-3"></i> Pack Investisseurs
                             </h5>
                         </a>
                         <p class="mb-4 text-sm">

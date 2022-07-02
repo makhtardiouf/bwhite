@@ -11,11 +11,11 @@ use App\Models\Payments;
 
 use Exception;
 use Illuminate\Http\Request;
+//use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Http;
 
-use Flash;
 use Response;
 
 class PaymentsController extends AppBaseController
@@ -78,6 +78,13 @@ class PaymentsController extends AppBaseController
      */
     public function submitWavePayment(Request $request)
     {
+        $params = [
+            'product' => $request->product,
+            'price' => $request->price,
+            'error' => '',
+            'wave_launch_url' => '#'
+        ];
+
         try {
             $input = $request->all();
             $amount = $request->price;
@@ -93,36 +100,30 @@ class PaymentsController extends AppBaseController
             ];
 
             Log::debug("Received input payment: " . json_encode($input));
-
-            $resp = Http::withToken($token)->post($url, $data);
-            $resp->throw();
-            $data = json_decode($resp->body());
-
-            Log::debug("Response from Wave:\n" . json_encode($data));
-
             if (Auth::check()) {
-               // Log::debug(json_encode(Auth::user()));
+                $user = Auth::user();
+                Log::debug("User $user->name $user->id");
                 //   $data->user_id = Auth::user()->id;
             }
 
-            // $data = json_decode($request);
-            // $payment = Payments::updateOrCreate([
-            //     'id',
-            //     'type',
-            //     'product',
-            //     'platform',
-            //     'data',
-            //     'user_id'
-            // ], $data);
-
-            // $payment->save();
+            $resp = Http::withToken($token)->post($url, $data);
+            $data = json_decode($resp->body());
             if ($data) {
-                return view('payments.wave')->with('wave_launch_url', $data->wave_launch_url);
-            } else {
-                return view('payments.wave')->with('wave_launch_url', '#');
+                $params['wave_launch_url'] = $data->wave_launch_url;
+                Log::debug("Response from Wave:\n" . json_encode($data));
+
+            } else if ($resp->failed()) {
+                $params['error'] = "Erreur de traitement $resp->status";
+                Log::debug("Wave payment processing error: $resp->status");
             }
+
+            return view('payments.wave')->with('params', $params);
+
         } catch (Exception $e) {
             Log::debug("Payment processing error: " . $e->getMessage());
+            $params['error'] = "Erreur de traitement. ";
+            notify()->error("Erreur de traitement du paiement Wave");
+            return view('payments.wave')->with('params', $params);
         }
     }
 

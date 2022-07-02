@@ -7,6 +7,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ResetController;
 use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\ListingController;
+use App\Http\Controllers\PackController;
 use App\Http\Controllers\PaymentsController;
 use App\Http\Livewire\Categories;
 
@@ -27,13 +28,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'home'])->name('home');
 
-Route::get('/packs', function () {
-	return view('packs.list');
-})->name('packs');
 
-Route::get('/packs/annonceur', function () {
-	return view('packs.annonceur');
-})->name('packs-annoncerur');
+Route::get('/packs', [PackController::class, 'index'])->name('packs');
+Route::get('/packs/annonceur', [PackController::class, 'annonceur'])->name('packsannonceur');
+Route::get('/packs/merchant', [PackController::class, 'merchant'])->name('packs.merchant');
+
 
 Route::get('/sysinfo', function () {
 	return phpinfo();
@@ -49,9 +48,6 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('dashboard', function () {
 		return view('dashboard');
 	})->name('dashboard');
-	
-	//Route::view('categories', 'livewire.categories.index')->name('categories');
-	//Route::get('category/create', Categories::class );
 
 	Route::get('billing', function () {
 		return view('billing');
