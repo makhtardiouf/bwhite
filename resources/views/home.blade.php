@@ -17,13 +17,15 @@
                             <div class="card card-blog card-plain">
                                 <div class="position-relative">
                                     <a class="shadow-xl border-radius-xl" href="/listings/show/{{ $listing->id}}">
-                                        <img src="{{ asset('storage/'.$listing->image) }}" alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
+                                        <img src="{{ asset('storage/'.$listing->image) }}" alt="img-blur-shadow" class="img-thumbnail shadow border-radius-xl">
                                     </a>
                                 </div>
                                 <div class="card-body px-1 pb-0">
                                     <a href="/listings/show/{{ $listing->id}}">
                                         <h5>{{ $listing->title }}</h5>
                                     </a>
+                                    <h5>{{ number_format($listing->price, 0, ',', '.') }} XOF</h5>
+
                                     <p class="mb-4 text-sm text-truncate">
                                         {!! Str::substr($listing->description, 0, 100) !!}
                                     </p>
