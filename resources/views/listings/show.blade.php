@@ -49,7 +49,7 @@ Contenu de l'annonce
                                             <a href="tel:{{ $listing->phone }}" class="text-dark m-2">
                                                 <i class="fa-2x fa-solid fa-phone"></i>
                                             </a>
-                                            <a href="https://wa.me/{{ $listing->phone }}?text=Bonjour" class="text-success m-2">
+                                            <a href="https://wa.me/{{ $listing->phone }}?text=Bonjour, je suis intéressé par votre annonce {{url()->current()}}/listings/show/{{ $listing->id}}" class="text-success m-2">
                                                 <i class="fa-2x fa-brands fa-whatsapp"></i>
                                             </a>
                                         </div>
